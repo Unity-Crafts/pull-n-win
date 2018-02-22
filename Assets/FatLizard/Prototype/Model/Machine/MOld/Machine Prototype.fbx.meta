@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 240cf9123e135984a8749f1cdea54e3a
+timeCreated: 1512221239
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arch
+    100002: Boarder
+    100004: Boarder_1
+    100006: Boarder_2
+    100008: Boarder_3
+    100010: Boarder_4
+    100012: Boarder_5
+    100014: ColorsPicker
+    100016: CubeB
+    100018: CubeG
+    100020: CubeO
+    100022: CubeP
+    100024: CubeR
+    100026: CubeY
+    100028: Cylinder
+    100030: Glass
+    100032: Group6
+    100034: Group7
+    100036: Group8
+    100038: Group9
+    100040: Group_19_1
+    100042: Group_19_2
+    100044: Lever
+    100046: Light
+    100048: Light_1
+    100050: Light_1 1
+    100052: Light_10
+    100054: Light_11
+    100056: Light_12
+    100058: Light_2
+    100060: Light_3
+    100062: Light_4
+    100064: Light_5
+    100066: Light_6
+    100068: Light_7
+    100070: Light_8
+    100072: Light_9
+    100074: Limiter
+    100076: Lower
+    100078: //RootNode
+    100080: Mesh1
+    100082: Mesh2
+    100084: Mesh25
+    100086: Mesh4
+    100088: Mesh5
+    100090: Mesh6
+    100092: Mesh7
+    100094: Mesh8
+    100096: Others
+    100098: PivotLever
+    100100: Receiver
+    100102: Sidings
+    100104: Sphere
+    100106: Upper
+    100108: Wall
+    400000: Arch
+    400002: Boarder
+    400004: Boarder_1
+    400006: Boarder_2
+    400008: Boarder_3
+    400010: Boarder_4
+    400012: Boarder_5
+    400014: ColorsPicker
+    400016: CubeB
+    400018: CubeG
+    400020: CubeO
+    400022: CubeP
+    400024: CubeR
+    400026: CubeY
+    400028: Cylinder
+    400030: Glass
+    400032: Group6
+    400034: Group7
+    400036: Group8
+    400038: Group9
+    400040: Group_19_1
+    400042: Group_19_2
+    400044: Lever
+    400046: Light
+    400048: Light_1
+    400050: Light_1 1
+    400052: Light_10
+    400054: Light_11
+    400056: Light_12
+    400058: Light_2
+    400060: Light_3
+    400062: Light_4
+    400064: Light_5
+    400066: Light_6
+    400068: Light_7
+    400070: Light_8
+    400072: Light_9
+    400074: Limiter
+    400076: Lower
+    400078: //RootNode
+    400080: Mesh1
+    400082: Mesh2
+    400084: Mesh25
+    400086: Mesh4
+    400088: Mesh5
+    400090: Mesh6
+    400092: Mesh7
+    400094: Mesh8
+    400096: Others
+    400098: PivotLever
+    400100: Receiver
+    400102: Sidings
+    400104: Sphere
+    400106: Upper
+    400108: Wall
+    2300000: Arch
+    2300002: Boarder
+    2300004: Boarder_1
+    2300006: Boarder_2
+    2300008: Boarder_3
+    2300010: Boarder_4
+    2300012: Boarder_5
+    2300014: ColorsPicker
+    2300016: CubeB
+    2300018: CubeG
+    2300020: CubeO
+    2300022: CubeP
+    2300024: CubeR
+    2300026: CubeY
+    2300028: Cylinder
+    2300030: Glass
+    2300032: Lever
+    2300034: Light
+    2300036: Light_1
+    2300038: Light_1 1
+    2300040: Light_10
+    2300042: Light_11
+    2300044: Light_12
+    2300046: Light_2
+    2300048: Light_3
+    2300050: Light_4
+    2300052: Light_5
+    2300054: Light_6
+    2300056: Light_7
+    2300058: Light_8
+    2300060: Light_9
+    2300062: //RootNode
+    2300064: Mesh1
+    2300066: Mesh2
+    2300068: Mesh25
+    2300070: Mesh4
+    2300072: Mesh5
+    2300074: Mesh6
+    2300076: Mesh7
+    2300078: Mesh8
+    2300080: Sphere
+    2300082: Wall
+    3300000: Arch
+    3300002: Boarder
+    3300004: Boarder_1
+    3300006: Boarder_2
+    3300008: Boarder_3
+    3300010: Boarder_4
+    3300012: Boarder_5
+    3300014: ColorsPicker
+    3300016: CubeB
+    3300018: CubeG
+    3300020: CubeO
+    3300022: CubeP
+    3300024: CubeR
+    3300026: CubeY
+    3300028: Cylinder
+    3300030: Glass
+    3300032: Lever
+    3300034: Light
+    3300036: Light_1
+    3300038: Light_1 1
+    3300040: Light_10
+    3300042: Light_11
+    3300044: Light_12
+    3300046: Light_2
+    3300048: Light_3
+    3300050: Light_4
+    3300052: Light_5
+    3300054: Light_6
+    3300056: Light_7
+    3300058: Light_8
+    3300060: Light_9
+    3300062: //RootNode
+    3300064: Mesh1
+    3300066: Mesh2
+    3300068: Mesh25
+    3300070: Mesh4
+    3300072: Mesh5
+    3300074: Mesh6
+    3300076: Mesh7
+    3300078: Mesh8
+    3300080: Sphere
+    3300082: Wall
+    4300000: Machine_Prototype
+    4300002: Cylinder
+    4300004: Sphere
+    4300006: ColorsPicker
+    4300008: CubeR
+    4300010: Boarder
+    4300012: CubeG
+    4300014: Boarder_1
+    4300016: CubeB
+    4300018: Boarder_2
+    4300020: CubeP
+    4300022: Boarder_3
+    4300024: CubeO
+    4300026: Boarder_4
+    4300028: CubeY
+    4300030: Boarder_5
+    4300032: Lever
+    4300034: Glass
+    4300036: Light
+    4300038: Arch
+    4300040: Light_1
+    4300042: Light_1
+    4300044: Light_2
+    4300046: Light_3
+    4300048: Light_4
+    4300050: Light_5
+    4300052: Light_6
+    4300054: Light_7
+    4300056: Light_8
+    4300058: Light_9
+    4300060: Light_10
+    4300062: Light_11
+    4300064: Light_12
+    4300066: Mesh4
+    4300068: Mesh5
+    4300070: Mesh6
+    4300072: Mesh7
+    4300074: Mesh8
+    4300076: Mesh25
+    4300078: Mesh2
+    4300080: Mesh1
+    4300082: Wall
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BackColor
+    second: {fileID: 2100000, guid: a459cf2bcff738742b323c0341616a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: 2b86a449722fa9f44b27533b8488167a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorChoice__ColorChoice_png
+    second: {fileID: 2100000, guid: 0e8935d40a13d48418419c1911f90e4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeBlue
+    second: {fileID: 2100000, guid: a4b7d226817945a4eaef8c4efa17610c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeGreen
+    second: {fileID: 2100000, guid: a3f38d0b8ae6b244f94c0e58b93d3f52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeMain
+    second: {fileID: 2100000, guid: e8972b8457aae944f95f9cd65c8e0b4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeOrange
+    second: {fileID: 2100000, guid: f156cb9b2fcece34b9eadb662c40d097, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubePink
+    second: {fileID: 2100000, guid: f4617c03f6f73804e8f8581090c92eac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeRed
+    second: {fileID: 2100000, guid: 0bf44123d44243e479e0ce6b00169d30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CubeYellow
+    second: {fileID: 2100000, guid: 8571377bad3779947ac395b45edebd61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial
+    second: {fileID: 2100000, guid: 8d45e203023124a4db9445e8157c5113, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: 95527fb5ce3c6fd4ea933a87fc479716, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 6b6c6a3bd31917141b5ef686e6517c01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 395521b2402dea24389bd6a4f34f6d4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_96_96_96
+    second: {fileID: 2100000, guid: 643a2f20a633bdf4eb7767881ee19461, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Color_008_2
+    second: {fileID: 2100000, guid: 89231b3639ee92941b860b82088ae537, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Silver_
+    second: {fileID: 2100000, guid: d101bb8015ddb054b9a355248d97423a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome_Glaze
+    second: {fileID: 2100000, guid: bdfc4869b01ae8b419d9420573ddcda8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light1
+    second: {fileID: 2100000, guid: 48cad8487ae250145b4c1026e086aeaa, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
