@@ -26,7 +26,7 @@ public class MachineGroup : MonoBehaviour
 
 			else
 			{
-				Debug.LogError ("BugReport: DID NOT FOUND ANY FOCUSED MACHINE");
+				//Debug.LogError ("BugReport: DID NOT FOUND ANY FOCUSED MACHINE");
 				return null;
 			}
 		}
@@ -65,13 +65,6 @@ public class MachineGroup : MonoBehaviour
 				return null;
 			}
 		}
-	}
-
-	void Awake()
-	{
-		machinePrefabs [0].machineInstance.mCollider.enabled = true;
-		CustomReference.Access.userInterfaces.machineText.text = "Bronze Machine";
-		CustomReference.Access.userInterfaces.prevButton.SetActive (false);
 	}
 
 	public void RefreshChipsDisplay()
@@ -153,10 +146,10 @@ public class MachineGroup : MonoBehaviour
 		if (OnSelectedMachine == null)
 			return;
 
-		OnSelectedMachine.ResetMachine ();
+		ResetSelectedMachine ();
+		OnSelectedMachine.cubeChecker.Statictify (true);
 
-		CustomReference.Access.userInterfaces.playWindow.SetActive (false);
-		CustomReference.Access.userInterfaces.machineText.transform.parent.gameObject.SetActive (true);
+		CustomReference.Access.userInterfaces.ToGameplay (false);
 
 		CustomReference.Access.objectReferences.gameAnim.SetTrigger(OnSelectedMachine.name + "Out");
 		StartCoroutine ( WaitForAnim() );

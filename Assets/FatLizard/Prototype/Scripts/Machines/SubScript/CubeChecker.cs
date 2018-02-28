@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class CubeChecker : MonoBehaviour
 {
+	[Range(0f, 1f)]
+	public float percentCoG = 0.49f;
+
 	[Header("CUBE RIGIDBODIES")]
 	public List<Rigidbody> cubePhysics = new List<Rigidbody> ();
 
@@ -20,7 +23,8 @@ public class CubeChecker : MonoBehaviour
 	[HideInInspector] public float[] rotRandom = new float[4]{0F, 90F, 180F, 270F};
 
 	[HideInInspector] public bool allCubePassed = false;
-	[HideInInspector] public bool cubeFallDown = false;
+	//[HideInInspector]
+	public bool cubeFallDown = false;
 
 	private MachineInstance mInstance = null;
 	public MachineInstance machine
@@ -65,6 +69,8 @@ public class CubeChecker : MonoBehaviour
 	{
 		return (cubePhysics.FindAll (x => x.IsSleeping () == true).Count == 3);
 	}
+
+	public Vector3 sizes = Vector3.zero;
 
 	void Update()
 	{
@@ -132,10 +138,12 @@ public class CubeChecker : MonoBehaviour
 	{
 		for(int index = 0; index < transform.childCount; index++)
 		{
+			float cogMax = cubePhysics[index].transform.lossyScale.x * percentCoG;
+
 			//Randomize cube center of gravity.
-			float cogX = Random.Range (-0.04f, 0.04f);
-			float cogY = Random.Range (-0.04f, 0.04f);
-			float cogZ = Random.Range (-0.04f, 0.04f);
+			float cogX = Random.Range (-cogMax, cogMax);
+			float cogY = Random.Range (-cogMax, cogMax);
+			float cogZ = Random.Range (-cogMax, cogMax);
 			cubePhysics[index].centerOfMass = new Vector3(cogX, cogY, cogZ);
 
 			//Set to their default positions

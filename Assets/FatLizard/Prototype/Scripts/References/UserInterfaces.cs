@@ -6,9 +6,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
-
 public class UserInterfaces : MonoBehaviour 
 {
 	[Header("PLAYER INFO")]
@@ -32,8 +29,40 @@ public class UserInterfaces : MonoBehaviour
 	public GameObject prevButton = null;
 	public GameObject nextButton = null;
 
+	[Header("Animator")]
+	public Animator playAnim = null;
+	public Animator chooseAnim = null;
+
+	public void ConfirmExit()
+	{
+		SetRaycastOn (false);
+		confirmExit.SetActive (false);
+		Deauthenticate ();
+	}
+
+	public void ToGameplay(bool yes)
+	{
+		if(yes)
+		{
+			playAnim.gameObject.SetActive (true);
+		}
+
+		else
+		{
+			chooseAnim.gameObject.SetActive (true);
+		}
+
+		playAnim.SetBool ("IsShowing", yes);
+		chooseAnim.SetBool ("IsShowing", !yes);
+	}
+
+	public void ShowGameplay(bool yes)
+	{
+		playAnim.gameObject.SetActive (yes);
+		chooseAnim.gameObject.SetActive (!yes);
+	}
+
 	[Header("MAIN GAMEPLAY")]
-	public GameObject playWindow = null;
 	public Text cashText = null;
 	public ResultInfo resultInfo = null;
 	public List<Image> chips = new List<Image> ();
@@ -44,40 +73,29 @@ public class UserInterfaces : MonoBehaviour
 	public GameObject lowerBetDisplay = null;
 	public GameObject checkingDisplay = null;
 
-	void Awake()
-	{
-		PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
-			.RequestServerAuthCode(false)
-			.RequestIdToken()
-			.Build();
+	[Header("EXIT MENU")]
+	public GameObject confirmExit = null;
 
-		PlayGamesPlatform.InitializeInstance(config);
-		PlayGamesPlatform.DebugLogEnabled = true;
-		PlayGamesPlatform.Activate();
+	public void ShowConfirm(bool showing)
+	{
+		if(showing)
+		{
+			SetRaycastOn (false);
+			confirmExit.SetActive (true);
+			chooseAnim.SetBool ("IsShowing", false);
+		}
+
+		else
+		{
+			confirmExit.SetActive (false);
+			chooseAnim.SetBool ("IsShowing", true);
+			SetRaycastOn (true);
+		}
 	}
 
 	public void Authenticate()
 	{
 		authButton.interactable = false;
-
-		PlayGamesPlatform.Instance.Authenticate((bool success) =>
-		{
-			if(success)
-			{
-				userDetails.userName = PlayGamesPlatform.Instance.GetUserDisplayName();
-				userName.text = userDetails.userName;
-
-				authButton.interactable = true;
-				authWindow.SetActive(false);
-				menuWindow.SetActive(true);
-			}
-
-			else
-			{
-				authButton.interactable = true;
-			}
-		});
-
 		authWindow.SetActive(false);
 		menuWindow.SetActive(true);
 	}
@@ -91,25 +109,19 @@ public class UserInterfaces : MonoBehaviour
 
 	public void Deauthenticate()
 	{
-		PlayGamesPlatform.Instance.SignOut();
 		userDetails.userName = String.Empty;
 		userName.text = String.Empty;
 		CustomReference.Access.machineGroups.OnFocusedMachine.mCollider.enabled = false;
 		CustomReference.Access.objectReferences.gameAnim.SetTrigger ("GameToMenu");
 
+		CustomReference.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
+			gobjs.SetActive(true);
+		});
+
+		authButton.interactable = true;
 		gameDisplay.SetActive (false);
 		menuWindow.SetActive(false);
 		authWindow.SetActive(true);
-	}
-
-	public void ShowAchievement()
-	{
-		PlayGamesPlatform.Instance.ShowAchievementsUI ();
-	}
-
-	public void ShowLeaderboard()
-	{
-		PlayGamesPlatform.Instance.ShowLeaderboardUI ();
 	}
 
 	public void UpdateUserInfos()
@@ -168,6 +180,20 @@ public class UserInterfaces : MonoBehaviour
 
 	public void SetRaycastOn(bool active)
 	{
+		if(active)
+		{
+			StartCoroutine (OnRaycasting(active));
+		}
+
+		else
+		{
+			CustomReference.Access.camScripts.raycastEnabled = active;
+		}
+	}
+
+	IEnumerator OnRaycasting(bool active)
+	{
+		yield return new WaitForSeconds (1f);
 		CustomReference.Access.camScripts.raycastEnabled = active;
 	}
 }

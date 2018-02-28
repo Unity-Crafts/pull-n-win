@@ -10,38 +10,47 @@ public class ObjectReferences : MonoBehaviour
 	public Transform gameSound = null;
 	public Animator offerCoins = null;
 
+	public List<GameObject> designObjects;
+
 	public void AnimatorEvent(string events)
 	{
 		Debug.Log ("AnimEvent: " + events);
 
 		if(events.Equals("OnMenu"))
 		{
-			CustomReference.Access.machineGroups.machinePrefabs[0].machineInstance.mCollider.enabled = true;
-			CustomReference.Access.userInterfaces.menuDisplay.SetActive (true);
 			CustomEvents.OnIntroToMenuEvent ();
+		}
+
+		if(events.Equals("OnGameplay"))
+		{
+			CustomEvents.OnPrepareGameplay ();
 		}
 
 		else if(events.Equals("OnZoomAM"))
 		{
-			CustomReference.Access.userInterfaces.playWindow.SetActive (true);
+			CustomReference.Access.userInterfaces.ShowGameplay (true);
+			CustomReference.Access.userInterfaces.ToGameplay (true);
 			CustomReference.Access.machineGroups.machinePrefabs [0].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomBM"))
 		{
-			CustomReference.Access.userInterfaces.playWindow.SetActive (true);
+			CustomReference.Access.userInterfaces.ShowGameplay (true);
+			CustomReference.Access.userInterfaces.ToGameplay (true);
 			CustomReference.Access.machineGroups.machinePrefabs [1].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomCM"))
 		{
-			CustomReference.Access.userInterfaces.playWindow.SetActive (true);
+			CustomReference.Access.userInterfaces.ShowGameplay (true);
+			CustomReference.Access.userInterfaces.ToGameplay (true);
 			CustomReference.Access.machineGroups.machinePrefabs [2].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomDM"))
 		{
-			CustomReference.Access.userInterfaces.playWindow.SetActive (true);
+			CustomReference.Access.userInterfaces.ShowGameplay (true);
+			CustomReference.Access.userInterfaces.ToGameplay (true);
 			CustomReference.Access.machineGroups.machinePrefabs [3].machineInstance.ResetMachine ();
 		}
 

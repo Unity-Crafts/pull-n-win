@@ -122,7 +122,8 @@ public class CamScript : MonoBehaviour
 	IEnumerator OnSelected()
 	{
 		//CustomReference.Access.userInterfaces.gameUI.transform..gameObject.SetActive (false);
-		CustomReference.Access.userInterfaces.machineText.transform.parent.gameObject.SetActive (false);
+		CustomReference.Access.userInterfaces.ToGameplay (true);
+
 		yield return new WaitForSeconds (1f);
 		CustomReference.Access.userInterfaces.gameDisplay.SetActive (true);
 		CustomReference.Access.machineGroups.OnFocusedMachine.onSelected = true;

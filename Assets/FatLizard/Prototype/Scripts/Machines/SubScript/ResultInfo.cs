@@ -14,13 +14,11 @@ public class ResultInfo : MonoBehaviour
 		if(playResult.getTotalPlayWin > playResult.getTotalPlayBet)
 		{
 			headerResult.text = "YOU WIN!";
-			headerResult.color = Color.green;
 		}
 
 		else
 		{
 			headerResult.text = "YOU LOSE!";
-			headerResult.color = Color.red;
 		}
 
 		totalChipPlace.text = playResult.getTotalPlayBet + "";

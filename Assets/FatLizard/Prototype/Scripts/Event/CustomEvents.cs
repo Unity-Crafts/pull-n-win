@@ -21,9 +21,31 @@ public enum Notification
 
 public class CustomEvents
 {
+	//Called when intro animation is about to enter main menu idling.
 	public static void OnIntroToMenuEvent()
 	{
+		CustomReference.Access.userInterfaces.menuDisplay.SetActive (true);
+		CustomReference.Access.userInterfaces.authWindow.SetActive (true);
+		CustomReference.Access.userInterfaces.menuWindow.SetActive (false);
+
 		Debug.Log ("OnMenuEvent: User is currently on authentication display.");
+	}
+
+	//Called when camera is about to idle on the first machine and wait for user interactions.
+	public static void OnPrepareGameplay()
+	{
+		CustomReference.Access.userInterfaces.ShowGameplay (false);
+		CustomReference.Access.userInterfaces.ToGameplay (false);
+		CustomReference.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
+			gobjs.SetActive(false);
+		});
+
+		CustomReference.Access.userInterfaces.SetRaycastOn (true);
+		CustomReference.Access.machineGroups.machinePrefabs[0].machineInstance.mCollider.enabled = true;
+		CustomReference.Access.userInterfaces.machineText.text = "Bronze Machine";
+		CustomReference.Access.userInterfaces.prevButton.SetActive (false);
+
+		Debug.Log ("OnGameEvent: User is currently on machine chooser display.");
 	}
 
 	public static void OnAuthenticationEvent(bool success)

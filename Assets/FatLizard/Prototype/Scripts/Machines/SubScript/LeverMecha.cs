@@ -55,6 +55,9 @@ public class LeverMecha : MonoBehaviour
 		}
 	}
 
+
+	public float maxDamp = 0.29f;
+
 	//Mouse or Touch screenpont. - Good Flexible.
 	void Update()
 	{
@@ -65,6 +68,11 @@ public class LeverMecha : MonoBehaviour
 
 		if(handleObj != null)
 		{
+			if(!machine.cubeChecker.cubeFallDown && ioValue > maxDamp)
+			{
+				machine.cubeChecker.cubeFallDown = true;
+			}
+
 			if(machine.cubeChecker.cubeFallDown)
 			{
 				if(ioValue < 1f)
@@ -77,21 +85,6 @@ public class LeverMecha : MonoBehaviour
 					machine.cubeChecker.cubeFallDown = false;
 				}
 			}
-
-			//if(machine.onResetting)
-			//{
-			//	if(ioValue > 0f)
-			//	{
-			//		ioValue = Mathf.Clamp01 (ioValue - (springs * 2f * Time.deltaTime));
-			//	}
-
-			//	else
-			//	{
-			//		machine.onReadyPlay = true;
-			//		machine.cubeChecker.RandomCubeTransform ();
-			//		machine.onResetting = false;
-			//	}
-			//}
 		}
 
 		//UPDATE CUBE RELEASE ROTATION FROM THE HANDLEBAR VALUE!
