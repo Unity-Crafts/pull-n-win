@@ -7,7 +7,7 @@ TagManager:
   - ChipDetect
   - ColorCube
   - OfferCoins
-  - UserBet
+  - ColorPicker
   layers:
   - Default
   - TransparentFX
@@ -17,12 +17,12 @@ TagManager:
   - UI
   - 
   - 
-  - Machines
-  - Environments
-  - Banners
-  - CalibrationScales
-  - Reflectors
-  - GameArea
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
