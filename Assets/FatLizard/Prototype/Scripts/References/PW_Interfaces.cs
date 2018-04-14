@@ -6,6 +6,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+using HungryCannibal.UnderTheSeaUIKit.Dialogs;
+using HungryCannibal.UnderTheSeaUIKit.ProgressBars;
+
 public class PW_Interfaces : MonoBehaviour 
 {
 	[Header("PLAYER INFO")]
@@ -18,12 +21,6 @@ public class PW_Interfaces : MonoBehaviour
 	public GameObject menuDisplay = null;
 	public GameObject gameDisplay = null;
 
-	[Header("AUTHENTICATION")]
-	public Text userName = null;
-	public Button authButton = null;
-	public GameObject authWindow = null;
-	public GameObject menuWindow = null;
-
 	[Header("MACHINE SELECTION")]
 	public Text machineText = null;
 	public GameObject prevButton = null;
@@ -33,10 +30,23 @@ public class PW_Interfaces : MonoBehaviour
 	public Animator playAnim = null;
 	public Animator chooseAnim = null;
 
+	[Header("MAIN GAMEPLAY")]
+	public CounterBar chipGameDisplay = null;
+	public PW_ResultInfo resultInfo = null;
+	public List<Image> chips = new List<Image> ();
+
+	[Header("NOTIFICATIONS")]
+	public DialogBehaviour alertDialog = null;
+	public GameObject rewardDisplay = null;
+	public GameObject checkingDisplay = null;
+
+	[Header("EXIT MENU")]
+	public DialogBehaviour confirmExit = null;
+
 	public void ConfirmExit()
 	{
 		SetRaycastOn (false);
-		confirmExit.SetActive (false);
+		confirmExit.Hide ();
 		Deauthenticate ();
 	}
 
@@ -44,16 +54,17 @@ public class PW_Interfaces : MonoBehaviour
 	{
 		if(yes)
 		{
+			chooseAnim.gameObject.SetActive (false);
 			playAnim.gameObject.SetActive (true);
+			playAnim.SetBool ("IsShowing", yes);
 		}
 
 		else
 		{
+			playAnim.gameObject.SetActive (false);
 			chooseAnim.gameObject.SetActive (true);
+			chooseAnim.SetBool ("IsShowing", !yes);
 		}
-
-		playAnim.SetBool ("IsShowing", yes);
-		chooseAnim.SetBool ("IsShowing", !yes);
 	}
 
 	public void ShowGameplay(bool yes)
@@ -62,55 +73,35 @@ public class PW_Interfaces : MonoBehaviour
 		chooseAnim.gameObject.SetActive (!yes);
 	}
 
-	[Header("MAIN GAMEPLAY")]
-	public Text cashText = null;
-	public PW_ResultInfo resultInfo = null;
-	public List<Image> chips = new List<Image> ();
-
-	[Header("NOTIFICATIONS")]
-	public GameObject noBetDisplay = null;
-	public GameObject rewardDisplay = null;
-	public GameObject lowerBetDisplay = null;
-	public GameObject checkingDisplay = null;
-
-	[Header("EXIT MENU")]
-	public GameObject confirmExit = null;
-
 	public void ShowConfirm(bool showing)
 	{
 		if(showing)
 		{
 			SetRaycastOn (false);
-			confirmExit.SetActive (true);
+			confirmExit.Show ();
 			chooseAnim.SetBool ("IsShowing", false);
 		}
 
 		else
 		{
-			confirmExit.SetActive (false);
+			confirmExit.Hide ();
 			chooseAnim.SetBool ("IsShowing", true);
 			SetRaycastOn (true);
 		}
 	}
 
-	public void Authenticate()
-	{
-		authButton.interactable = false;
-		authWindow.SetActive(false);
-		menuWindow.SetActive(true);
-	}
-
 	public void StartGame()
 	{
 		menuDisplay.SetActive (false);
+		menuDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
 		gameDisplay.SetActive (true);
+		gameDisplay.GetComponent<CanvasGroup> ().alpha = 1f;
 		PW_References.Access.objectReferences.gameAnim.SetTrigger ("MenuToGame");
 	}
 
 	public void Deauthenticate()
 	{
 		userDetails.userName = String.Empty;
-		userName.text = String.Empty;
 		PW_References.Access.machineGroups.OnFocusedMachine.mCollider.enabled = false;
 		PW_References.Access.objectReferences.gameAnim.SetTrigger ("GameToMenu");
 
@@ -118,15 +109,13 @@ public class PW_Interfaces : MonoBehaviour
 			gobjs.SetActive(true);
 		});
 
-		authButton.interactable = true;
 		gameDisplay.SetActive (false);
-		menuWindow.SetActive(false);
-		authWindow.SetActive(true);
+		PW_References.Access.userInterfaces.gameDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
 	}
 
 	public void UpdateUserInfos()
 	{
-		cashText.text = userDetails.currentCash.ToString();
+		chipGameDisplay.count = userDetails.currentCash;
 	}
 
 	public void UpdateUserRecord(int win, int bet)

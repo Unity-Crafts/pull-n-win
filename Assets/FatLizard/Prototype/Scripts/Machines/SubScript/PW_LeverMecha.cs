@@ -20,6 +20,8 @@ public class PW_LeverMecha : MonoBehaviour
 	public float springs = 2.9f;
 	public float amplitude = 1.2f;
 	public float maxValue = 25f;
+	public float minLever = 25f;
+	public float maxLever = 172f;
 
 	[Header("OBJECT REFERENCE")]
 	public Collider handleCollider = null;
@@ -55,10 +57,10 @@ public class PW_LeverMecha : MonoBehaviour
 		}
 	}
 
-
 	public float maxDamp = 0.29f;
 
 	//Mouse or Touch screenpont. - Good Flexible.
+	private bool currentlyLeveling = false;
 	void Update()
 	{
 		Rotation ();
@@ -71,19 +73,21 @@ public class PW_LeverMecha : MonoBehaviour
 			if(!machine.cubeChecker.cubeFallDown && ioValue > maxDamp)
 			{
 				machine.cubeChecker.cubeFallDown = true;
+				currentlyLeveling = true;
+			}
+		}
+
+		if(currentlyLeveling)
+		{
+			if(ioValue < 1f)
+			{
+				ioValue = Mathf.Clamp (ioValue + (springs * Time.deltaTime), minLever, maxLever);
 			}
 
-			if(machine.cubeChecker.cubeFallDown)
+			else
 			{
-				if(ioValue < 1f)
-				{
-					ioValue = Mathf.Clamp01 (ioValue + (springs * Time.deltaTime));
-				}
-
-				else
-				{
-					machine.cubeChecker.cubeFallDown = false;
-				}
+				machine.cubeChecker.cubeFallDown = false;
+				currentlyLeveling = false;
 			}
 		}
 
@@ -152,7 +156,7 @@ public class PW_LeverMecha : MonoBehaviour
 				{
 					if(machine.colorPicker.betHolder == null)
 					{
-						PW_References.Access.userInterfaces.noBetDisplay.SetActive(true);
+						PW_References.Access.userInterfaces.alertDialog.Show("Its is not allowed to pull the lever if you have no bet placed.");
 						PW_CustomEvents.OnNotificationEvents (Notification.NoChipsBet); return;
 					}
 

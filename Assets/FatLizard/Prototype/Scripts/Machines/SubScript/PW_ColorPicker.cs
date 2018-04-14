@@ -6,8 +6,6 @@ using System.Collections.Generic;
 public class PW_ColorPicker : MonoBehaviour
 {
 	[Header("ANIMATORS")]
-	public Animator colorBlocker = null;
-
 	[HideInInspector] public int currentChip = 0;
 	[HideInInspector] public bool colorBlock = false;
 	[HideInInspector] public GameObject betHolder = null;
@@ -98,17 +96,17 @@ public class PW_ColorPicker : MonoBehaviour
 				else
 				{
 					ColorBlock (true);
+					PW_References.Access.userInterfaces.alertDialog.Show ("You have an insufficient chips, please lower your bet " +
+						"or try to watch video to get FREE chips.");
 					PW_CustomEvents.OnNotificationEvents (Notification.ChipLowerCash);
 				}
 			}
 
 			else
 			{
-				if( !PW_References.Access.objectReferences.offerCoins.GetCurrentAnimatorStateInfo(0).IsTag("Showing") )
-				{
-					PW_References.Access.objectReferences.offerCoins.SetTrigger ("Show");
-					PW_CustomEvents.OnNotificationEvents (Notification.Insufficient);
-				}
+				PW_References.Access.userInterfaces.alertDialog.Show ("You have an zero chip balance, you can buy " +
+					"or try to watch video to get FREE chips.");
+				PW_CustomEvents.OnNotificationEvents (Notification.Insufficient);
 			}
 		}
 	}
@@ -119,7 +117,8 @@ public class PW_ColorPicker : MonoBehaviour
 		{
 			if(!colorBlock)
 			{
-				PW_References.Access.userInterfaces.lowerBetDisplay.SetActive (true);
+				PW_References.Access.userInterfaces.alertDialog
+					.Show ("Please place a bet before pulling the lever. You are not allowed to pull unless you placed a bet.");
 				colorBlock = true;
 			}
 		}
@@ -128,7 +127,7 @@ public class PW_ColorPicker : MonoBehaviour
 		{
 			if(colorBlock)
 			{
-				PW_References.Access.userInterfaces.lowerBetDisplay.SetActive (false);
+				PW_References.Access.userInterfaces.alertDialog.Hide ();
 				colorBlock = false;
 			}
 		}

@@ -2,40 +2,58 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using HungryCannibal.UnderTheSeaUIKit.Dialogs;
 
 public class PW_ResultInfo : MonoBehaviour
 {
+	public string winTitle = "Congratulation!"; 
+	public string loseTitle = "Sorry, try again!"; 
+
+	[Header("REFERENCES")]
+	public DialogBehaviour dialog = null;
 	public Text headerResult = null;
 	public Text winningResult = null;
-	public Text totalChipPlace = null;
+	public List<Image> cubeDisplay = new List<Image>();
+	public Sprite neutral = null;
+	public List<Sprite> cubes = new List<Sprite>();
 
 	public void ShowDisplay(PW_PlayResult playResult)
 	{
-		if(playResult.getTotalPlayWin > playResult.getTotalPlayBet)
-		{
-			headerResult.text = "YOU WIN!";
-		}
+		cubeDisplay.ForEach((Image display) => {
+			display.sprite = neutral;
+		});
 
-		else
-		{
-			headerResult.text = "YOU LOSE!";
-		}
-
-		totalChipPlace.text = playResult.getTotalPlayBet + "";
+		dialog.Show ();
+		headerResult.text = playResult.getTotalPlayWin > playResult.getTotalPlayBet ? winTitle : loseTitle;
 		winningResult.text = playResult.getTotalPlayWin + "";
 
-		gameObject.SetActive (true);
-	}
+		//Refresh cube display.
+		int curCubeIndex = 0;
+		for(int i = 0; i < playResult.result.Length; i++)
+		{
+			if(playResult.result[i] >= 1)
+			{
+				cubeDisplay [curCubeIndex].sprite = cubes [i];
+				curCubeIndex += 1;
+			}
 
-	//"P" + colorPicked[index] + ".00 X " + colorBets[index] + " = P" + (colorPicked[index] * colorBets[index]) + ".00";
+			if(playResult.result[i] >= 2)
+			{
+				cubeDisplay [curCubeIndex].sprite = cubes [i];
+				curCubeIndex += 1;
+			}
+
+			if(playResult.result[i] == 3)
+			{
+				cubeDisplay [curCubeIndex].sprite = cubes [i];
+			}
+
+			//Debug.LogWarning (i + " - " + playResult.result[i]);
+		}
+	}
 
 	public void HideDisplay()
 	{
-		headerResult.text = "PLAY n' WIN";
-
-		totalChipPlace.text = "P0.00"; 
-		winningResult.text = "P0.00"; 
-
-		gameObject.SetActive (false);
+		dialog.Hide ();
 	}
 }

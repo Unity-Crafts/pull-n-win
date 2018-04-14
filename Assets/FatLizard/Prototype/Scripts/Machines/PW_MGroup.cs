@@ -119,18 +119,21 @@ public class PW_MGroup : MonoBehaviour
 		}
 	}
 
-	public void ResetSelectedMachine()
+	public void ResetSelectedMachine(bool cancel)
 	{
 		if (OnSelectedMachine == null)
 			return;
 
 		if(OnSelectedMachine.colorPicker.betHolder != null)
 		{
-			foreach(PW_Bets bets in OnSelectedMachine.playResult.colorBets)
+			if(cancel)
 			{
-				foreach(PW_Bet bet in bets.list)
+				foreach(PW_Bets bets in OnSelectedMachine.playResult.colorBets)
 				{
-					PW_References.Access.userInterfaces.userDetails.currentCash += bet.chipAmount * bet.chipNumber;
+					foreach(PW_Bet bet in bets.list)
+					{
+						PW_References.Access.userInterfaces.userDetails.currentCash += bet.chipAmount * bet.chipNumber;
+					}
 				}
 			}
 
@@ -146,7 +149,7 @@ public class PW_MGroup : MonoBehaviour
 		if (OnSelectedMachine == null)
 			return;
 
-		ResetSelectedMachine ();
+		ResetSelectedMachine (true);
 		OnSelectedMachine.cubeChecker.Statictify (true);
 
 		PW_References.Access.userInterfaces.ToGameplay (false);

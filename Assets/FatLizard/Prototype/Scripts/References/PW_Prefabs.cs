@@ -8,7 +8,6 @@ public class PW_Prefabs : MonoBehaviour
 	[Header("INTERACTORS")]
 	public Animator gameAnim = null;
 	public Transform gameSound = null;
-	public Animator offerCoins = null;
 
 	public List<GameObject> designObjects;
 
@@ -21,7 +20,7 @@ public class PW_Prefabs : MonoBehaviour
 			PW_CustomEvents.OnIntroToMenuEvent ();
 		}
 
-		if(events.Equals("OnGameplay"))
+		else if(events.Equals("OnGameplay"))
 		{
 			PW_CustomEvents.OnPrepareGameplay ();
 		}

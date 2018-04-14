@@ -134,6 +134,7 @@ public class PW_CamScript : MonoBehaviour
 
 		yield return new WaitForSeconds (1f);
 		PW_References.Access.userInterfaces.gameDisplay.SetActive (true);
+		PW_References.Access.userInterfaces.gameDisplay.GetComponent<CanvasGroup> ().alpha = 1f;
 		PW_References.Access.machineGroups.OnFocusedMachine.onSelected = true;
 		PW_References.Access.machineGroups.RefreshChipsDisplay ();
 		PW_References.Access.userInterfaces.chips [0].transform.parent.GetComponent<Toggle> ().isOn = true;

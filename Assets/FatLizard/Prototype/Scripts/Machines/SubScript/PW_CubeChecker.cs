@@ -169,11 +169,15 @@ public class PW_CubeChecker : MonoBehaviour
 			RaycastHit hitCheck = new RaycastHit();
 			if(Physics.Raycast (transform.GetChild(index).position, Vector3.up, out hitCheck))
 			{
-				cubesResult[hitCheck.collider.transform.GetSiblingIndex ()] += 1;
-				Debug.DrawLine(transform.GetChild(index).position, hitCheck.point, Color.red, 1f);
+				if(hitCheck.transform.IsChildOf(transform.GetChild(index)))
+				{
+					cubesResult[hitCheck.collider.transform.GetSiblingIndex ()] += 1;
+					Debug.DrawLine(transform.GetChild(index).position, hitCheck.point, Color.red, 1f);
+					//Debug.Log (index + " - " + hitCheck.collider.transform.GetSiblingIndex ());
+				}
 			}
 		}
-
+		//Debug.Log ("C0-" + cubesResult[0] + " " + "C1-" + cubesResult[1] + " " + "C2-" + cubesResult[2] + " " + "C3-" + cubesResult[3] + " " + "C4-" + cubesResult[4] + " " + "C5-" + cubesResult[5] );
 		return cubesResult;
 	}
 }

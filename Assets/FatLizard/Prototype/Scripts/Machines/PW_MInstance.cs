@@ -163,12 +163,15 @@ public class PW_MInstance : MonoBehaviour
 		//CHECK FOR CUBE COLOR RESULT!
 		playResult.result = cubeChecker.CheckCubeResult ();
 
+		//UPDATE THE GAME INFO DISPLAY!
+		PW_References.Access.userInterfaces.resultInfo.ShowDisplay(playResult);
+
 		//CHECK IF THERE IS A SPINNER TARGET.
 		for(int index = 0; index < playResult.result.Length; index++)
 		{
 			if(playResult.result[index] == 1)
 			{
-				playResult.result[index] = playResult.result[index] * comboPanel.spinValue.oneColor;
+				playResult.result [index] = playResult.result [index] * comboPanel.spinValue.oneColor;
 			}
 
 			if(playResult.result[index] == 2)
@@ -193,9 +196,6 @@ public class PW_MInstance : MonoBehaviour
 			//headerResult.text = "YOU LOSE!";
 			ChangeLightFlicker(0.95f);
 		}
-
-		//UPDATE THE GAME INFO DISPLAY!
-		PW_References.Access.userInterfaces.resultInfo.ShowDisplay(playResult);
 
 		ProcessPlayResult (playResult.getTotalPlayWin, playResult.getTotalPlayBet); 
 	}

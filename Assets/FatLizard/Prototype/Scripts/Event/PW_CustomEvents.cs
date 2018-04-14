@@ -25,9 +25,7 @@ public class PW_CustomEvents
 	public static void OnIntroToMenuEvent()
 	{
 		PW_References.Access.userInterfaces.menuDisplay.SetActive (true);
-		PW_References.Access.userInterfaces.authWindow.SetActive (true);
-		PW_References.Access.userInterfaces.menuWindow.SetActive (false);
-
+		PW_References.Access.userInterfaces.menuDisplay.GetComponent<CanvasGroup> ().alpha = 1f;
 		Debug.Log ("OnMenuEvent: User is currently on authentication display.");
 	}
 
@@ -36,6 +34,7 @@ public class PW_CustomEvents
 	{
 		PW_References.Access.userInterfaces.ShowGameplay (false);
 		PW_References.Access.userInterfaces.ToGameplay (false);
+
 		PW_References.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
 			gobjs.SetActive(false);
 		});
@@ -45,6 +44,8 @@ public class PW_CustomEvents
 		PW_References.Access.userInterfaces.machineText.text = "Bronze Machine";
 		PW_References.Access.userInterfaces.prevButton.SetActive (false);
 
+		PW_References.Access.userInterfaces.chipGameDisplay.count = 
+			PW_References.Access.userInterfaces.userDetails.currentCash;
 		Debug.Log ("OnGameEvent: User is currently on machine chooser display.");
 	}
 
