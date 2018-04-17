@@ -207,7 +207,7 @@ public class PW_MInstance : MonoBehaviour
 	/// <param name="bet">Bet.</param>
 	public void ProcessPlayResult(int win, int bet)
 	{
-		PW_References.Access.userInterfaces.userDetails.currentCash += win;
+		PW_References.Access.userInterfaces.userDetails.currentChips += win;
 		PW_References.Access.userInterfaces.UpdateUserInfos ();
 		PW_References.Access.userInterfaces.UpdateUserRecord(win, bet);
 

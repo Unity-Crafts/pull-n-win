@@ -59,11 +59,11 @@ public class PW_ColorPicker : MonoBehaviour
 	{
 		if(hitInfo.transform.GetComponentInParent<PW_ColorPicker>() != null && machine.onReadyPlay)
 		{
-			if(PW_References.Access.userInterfaces.userDetails.currentCash > 0)
+			if(PW_References.Access.userInterfaces.userDetails.currentChips > 0)
 			{
 				PW_BillValue betting = PW_References.Access.machineGroups.OnActiveChipPrefab;
 
-				if(PW_References.Access.userInterfaces.userDetails.currentCash >= betting.amount)
+				if(PW_References.Access.userInterfaces.userDetails.currentChips >= betting.amount)
 				{
 					//ADD THE SPECIFIED AMOUNT TO THE COLOR PICKED!
 					machine.playResult.UpdateResult
@@ -73,7 +73,7 @@ public class PW_ColorPicker : MonoBehaviour
 					);
 
 					//SUBCTRACT THE AMOUNT FROM THE TOTAL CASH!
-					PW_References.Access.userInterfaces.userDetails.currentCash -= betting.amount;
+					PW_References.Access.userInterfaces.userDetails.currentChips -= betting.amount;
 
 					//CREATE A GAMEOBJECT TO HOLD BET PREFABS!
 					if(betHolder == null)

@@ -19,7 +19,8 @@ public class PW_LeverMecha : MonoBehaviour
 	[Header("LEVER SETTINGS")]
 	public float springs = 2.9f;
 	public float amplitude = 1.2f;
-	public float maxValue = 25f;
+	public float autoLever = 25f;
+	public float maxDamp = 0.29f;
 	public float minLever = 25f;
 	public float maxLever = 172f;
 
@@ -29,6 +30,10 @@ public class PW_LeverMecha : MonoBehaviour
 
 	private float damping = 7f;
 	private Transform handleObj = null;
+
+	[Header("DEBUG INFORMATION")]
+	//Mouse or Touch screenpont. - Good Flexible.
+	public bool currentlyLeveling = false;
 
 	private PW_MInstance mInstance = null;
 	public PW_MInstance machine
@@ -57,10 +62,6 @@ public class PW_LeverMecha : MonoBehaviour
 		}
 	}
 
-	public float maxDamp = 0.29f;
-
-	//Mouse or Touch screenpont. - Good Flexible.
-	private bool currentlyLeveling = false;
 	void Update()
 	{
 		Rotation ();
@@ -70,7 +71,7 @@ public class PW_LeverMecha : MonoBehaviour
 
 		if(handleObj != null)
 		{
-			if(!machine.cubeChecker.cubeFallDown && ioValue > maxDamp)
+			if(!currentlyLeveling && ioValue > maxDamp)
 			{
 				machine.cubeChecker.cubeFallDown = true;
 				currentlyLeveling = true;
@@ -157,7 +158,8 @@ public class PW_LeverMecha : MonoBehaviour
 					if(machine.colorPicker.betHolder == null)
 					{
 						PW_References.Access.userInterfaces.alertDialog.Show("Its is not allowed to pull the lever if you have no bet placed.");
-						PW_CustomEvents.OnNotificationEvents (Notification.NoChipsBet); return;
+						PW_References.Access.PlaySound ("NoBet");
+						PW_CustomEvents.OnNotificationEvents (Notification.NoChipsBet);
 					}
 
 					else
@@ -190,7 +192,7 @@ public class PW_LeverMecha : MonoBehaviour
 			if( (objPos.y - damping) > castPos.y )
 			{
 				amplitude = (objPos.y + damping) - castPos.y;
-				float sensitivity = ( amplitude / maxValue ); //Debug.Log ("Increasing");
+				float sensitivity = ( amplitude / autoLever ); //Debug.Log ("Increasing");
 				ioValue = Mathf.Clamp01(ioValue + (Time.smoothDeltaTime * sensitivity));
 			}
 

@@ -24,9 +24,17 @@ public class PW_CustomEvents
 	//Called when intro animation is about to enter main menu idling.
 	public static void OnIntroToMenuEvent()
 	{
+		//Temporary - Remove upon addition of the server side!
+		PW_UserDetails ud = new PW_UserDetails ();
+		ud.currentChips = 1000000;
+		ud.currentGems = 10;
+		PW_References.Access.userInterfaces.RefreshUserDetails (ud);
+
 		PW_References.Access.userInterfaces.menuDisplay.SetActive (true);
 		PW_References.Access.userInterfaces.menuDisplay.GetComponent<CanvasGroup> ().alpha = 1f;
-		Debug.Log ("OnMenuEvent: User is currently on authentication display.");
+		PW_References.Access.userInterfaces.menuAnim.SetTrigger ("Show");
+		PW_References.Access.userInterfaces.
+			DebugLog (PW_Interfaces.Debugs.Log, "OnMenuEvent: User is currently on Main Menu display.");
 	}
 
 	//Called when camera is about to idle on the first machine and wait for user interactions.
@@ -45,35 +53,38 @@ public class PW_CustomEvents
 		PW_References.Access.userInterfaces.prevButton.SetActive (false);
 
 		PW_References.Access.userInterfaces.chipGameDisplay.count = 
-			PW_References.Access.userInterfaces.userDetails.currentCash;
-		Debug.Log ("OnGameEvent: User is currently on machine chooser display.");
-	}
+			PW_References.Access.userInterfaces.userDetails.currentChips;
+		PW_References.Access.userInterfaces.gemGameDisplay.count = 
+			PW_References.Access.userInterfaces.userDetails.currentGems;
 
-	public static void OnAuthenticationEvent(bool success)
-	{
-		Debug.Log ("OnAuthEvent: User is finished authenticating: Success: " + success);
+		PW_References.Access.userInterfaces.
+			DebugLog (PW_Interfaces.Debugs.Log, "OnGameEvent: User is currently on machine chooser display.");
 	}
 
 	public static void OnPlayResultEvent(bool winner)
 	{
-		Debug.Log ("OnResultEvent: Machine is finished calculating result: Winner: " + winner);
+		PW_References.Access.userInterfaces.
+			DebugLog (PW_Interfaces.Debugs.Log, "OnResultEvent: Machine is finished calculating result: Winner: " + winner);
 	}
 
 	public static void OnNotificationEvents(Notification notify)
 	{
 		if(notify == Notification.NoChipsBet)
 		{
-			Debug.Log ("OnNotifyEvent: There is no chips bet, yet trying to pull the lever.");
+			PW_References.Access.userInterfaces.
+				DebugLog (PW_Interfaces.Debugs.Log, "OnNotifyEvent: There is no chips bet, yet trying to pull the lever.");
 		}
 
 		else if(notify == Notification.ChipLowerCash)
 		{
-			Debug.Log ("OnNotifyEvent: The insufficient virtual cash in relation to selected chip.");
+			PW_References.Access.userInterfaces.
+				DebugLog (PW_Interfaces.Debugs.Log, "OnNotifyEvent: The insufficient virtual cash in relation to selected chip.");
 		}
 
 		else if(notify == Notification.Insufficient)
 		{
-			Debug.Log ("OnNotifyEvent: The insufficient virtual cash or almost zero balance.");
+			PW_References.Access.userInterfaces.
+				DebugLog (PW_Interfaces.Debugs.Log, "OnNotifyEvent: The insufficient virtual cash or almost zero balance.");
 		}
 	}
 }

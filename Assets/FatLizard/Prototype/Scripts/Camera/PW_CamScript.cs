@@ -21,7 +21,10 @@ public class PW_CamScript : MonoBehaviour
 			Vector3 castPos = Vector3.zero;
 			if (Application.isMobilePlatform)
 			{
-				castPos = Input.GetTouch(0).position;
+				if(Input.touchCount > 0 )
+				{
+					castPos = Input.GetTouch(0).position;
+				}
 			}
 
 			else
@@ -31,7 +34,8 @@ public class PW_CamScript : MonoBehaviour
 
 			if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
 			{
-				prevScreenPos = castPos; curScreenPos = castPos;
+				prevScreenPos = castPos;
+				curScreenPos = castPos;
 			}
 
 			if ((Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) || Input.GetMouseButton (0))

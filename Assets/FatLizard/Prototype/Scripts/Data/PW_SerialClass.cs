@@ -109,12 +109,8 @@ public class PW_PlayResult
 [System.Serializable]
 public class PW_UserDetails
 {
-	public string userToken = "";
-	public string userName = "";
-	public Texture2D userPhoto = null;
-
-	public int currentCash = 100;
-	public int userReturnAward = 100;
+	public int currentChips = 100000;
+	public int currentGems = 10;
 }
 
 [System.Serializable]

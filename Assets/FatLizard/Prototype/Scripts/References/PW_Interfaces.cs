@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 using HungryCannibal.UnderTheSeaUIKit.Dialogs;
 using HungryCannibal.UnderTheSeaUIKit.ProgressBars;
+using HungryCannibal.UnderTheSeaUIKit;
 
 public class PW_Interfaces : MonoBehaviour 
 {
@@ -27,27 +28,84 @@ public class PW_Interfaces : MonoBehaviour
 	public GameObject nextButton = null;
 
 	[Header("Animator")]
-	public Animator playAnim = null;
+	public Animator menuAnim = null;
 	public Animator chooseAnim = null;
+	public Animator playAnim = null;
 
 	[Header("MAIN GAMEPLAY")]
+	public CounterBar chipMenuDisplay = null;
+	public CounterBar gemMenuDisplay = null;
 	public CounterBar chipGameDisplay = null;
+	public CounterBar gemGameDisplay = null;
 	public PW_ResultInfo resultInfo = null;
 	public List<Image> chips = new List<Image> ();
 
 	[Header("NOTIFICATIONS")]
+	public ViewSwitcher viewSwitcher = null;
 	public DialogBehaviour alertDialog = null;
 	public GameObject rewardDisplay = null;
 	public GameObject checkingDisplay = null;
-
-	[Header("EXIT MENU")]
 	public DialogBehaviour confirmExit = null;
+
+	[Header("DEBUG INFORMATION")]
+	public bool debugConsole = true;
+	public enum Debugs { Log, Warn, Error }
+	public void DebugLog(Debugs debugs, string content)
+	{
+		if(debugConsole)
+		{
+			if(debugs == Debugs.Warn)
+			{
+				Debug.LogWarning (content);
+			}
+
+			else if(debugs == Debugs.Error)
+			{
+				Debug.LogError (content);
+			}
+
+			else
+			{
+				Debug.Log (content);
+			}
+		}
+	}
+
+	void Awake()
+	{
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+	}
+
+	public void StartGame()
+	{
+		StartCoroutine (StartingGame());
+	}
+
+	private IEnumerator StartingGame()
+	{
+		menuAnim.SetTrigger ("Hide");
+		gameDisplay.SetActive (true);
+		PW_References.Access.objectReferences.gameAnim.SetTrigger ("MenuToGame");
+		viewSwitcher.SwitchView (1);
+
+		yield return new WaitForSeconds (1f);
+		menuDisplay.SetActive (false);
+	}
 
 	public void ConfirmExit()
 	{
 		SetRaycastOn (false);
 		confirmExit.Hide ();
-		Deauthenticate ();
+
+		PW_References.Access.machineGroups.OnFocusedMachine.mCollider.enabled = false;
+		PW_References.Access.objectReferences.gameAnim.SetTrigger ("GameToMenu");
+
+		PW_References.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
+			gobjs.SetActive(true);
+		});
+
+		gameDisplay.SetActive (false);
+		PW_References.Access.userInterfaces.gameDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
 	}
 
 	public void ToGameplay(bool yes)
@@ -90,32 +148,16 @@ public class PW_Interfaces : MonoBehaviour
 		}
 	}
 
-	public void StartGame()
+	public void RefreshUserDetails(PW_UserDetails _userDetails)
 	{
-		menuDisplay.SetActive (false);
-		menuDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
-		gameDisplay.SetActive (true);
-		gameDisplay.GetComponent<CanvasGroup> ().alpha = 1f;
-		PW_References.Access.objectReferences.gameAnim.SetTrigger ("MenuToGame");
-	}
-
-	public void Deauthenticate()
-	{
-		userDetails.userName = String.Empty;
-		PW_References.Access.machineGroups.OnFocusedMachine.mCollider.enabled = false;
-		PW_References.Access.objectReferences.gameAnim.SetTrigger ("GameToMenu");
-
-		PW_References.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
-			gobjs.SetActive(true);
-		});
-
-		gameDisplay.SetActive (false);
-		PW_References.Access.userInterfaces.gameDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
+		userDetails = _userDetails;
+		PW_References.Access.userInterfaces.chipMenuDisplay.count = userDetails.currentChips;
+		PW_References.Access.userInterfaces.gemMenuDisplay.count = userDetails.currentGems;
 	}
 
 	public void UpdateUserInfos()
 	{
-		chipGameDisplay.count = userDetails.currentCash;
+		chipGameDisplay.count = userDetails.currentChips;
 	}
 
 	public void UpdateUserRecord(int win, int bet)
@@ -137,33 +179,25 @@ public class PW_Interfaces : MonoBehaviour
 			PW_References.Access.PlaySound ("Loser");
 		}
 
-		if (bet > 0) //Update new Record Details!
+		userRecords.numberBet += 1;
+		userRecords.totalBet += bet;
+
+		//Update new Max Bet Amount!
+		if(userRecords.maxBet < bet)
 		{
-			userRecords.numberBet += 1;
-			userRecords.totalBet += bet;
-
-			//Update new Max Bet Amount!
-			if(userRecords.maxBet < bet)
-			{
-				userRecords.maxBet = bet;
-			}
-
-			//Update new Max Win Amount!
-			if(userRecords.maxWin < win) 
-			{
-				userRecords.maxWin = win;
-			}
-
-			//Update new Max Loss Amount!
-			if(userRecords.maxLoss < bet - win)
-			{
-				userRecords.maxLoss = bet - win;
-			}
+			userRecords.maxBet = bet;
 		}
 
-		else 
+		//Update new Max Win Amount!
+		if(userRecords.maxWin < win) 
 		{
-			PW_References.Access.PlaySound ("NoBet");
+			userRecords.maxWin = win;
+		}
+
+		//Update new Max Loss Amount!
+		if(userRecords.maxLoss < bet - win)
+		{
+			userRecords.maxLoss = bet - win;
 		}
 	}
 
@@ -178,6 +212,8 @@ public class PW_Interfaces : MonoBehaviour
 		{
 			PW_References.Access.camScripts.raycastEnabled = active;
 		}
+
+		DebugLog (Debugs.Log, "Machine raycasting is turned " + active);
 	}
 
 	IEnumerator OnRaycasting(bool active)

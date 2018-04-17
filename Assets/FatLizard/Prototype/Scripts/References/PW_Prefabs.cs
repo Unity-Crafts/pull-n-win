@@ -13,8 +13,6 @@ public class PW_Prefabs : MonoBehaviour
 
 	public void AnimatorEvent(string events)
 	{
-		Debug.Log ("AnimEvent: " + events);
-
 		if(events.Equals("OnMenu"))
 		{
 			PW_CustomEvents.OnIntroToMenuEvent ();

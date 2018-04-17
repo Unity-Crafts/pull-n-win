@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HungryCannibal.UnderTheSeaUIKit.Dialogs;
+using HungryCannibal.UnderTheSeaUIKit.ProgressBars;
 
 public class PW_ResultInfo : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PW_ResultInfo : MonoBehaviour
 	[Header("REFERENCES")]
 	public DialogBehaviour dialog = null;
 	public Text headerResult = null;
-	public Text winningResult = null;
+	public CounterBar winningResult = null;
 	public List<Image> cubeDisplay = new List<Image>();
 	public Sprite neutral = null;
 	public List<Sprite> cubes = new List<Sprite>();
@@ -25,7 +26,8 @@ public class PW_ResultInfo : MonoBehaviour
 
 		dialog.Show ();
 		headerResult.text = playResult.getTotalPlayWin > playResult.getTotalPlayBet ? winTitle : loseTitle;
-		winningResult.text = playResult.getTotalPlayWin + "";
+		winningResult.count = 0f;
+		winningResult.IncrementCount(playResult.getTotalPlayWin, true);
 
 		//Refresh cube display.
 		int curCubeIndex = 0;

@@ -75,7 +75,16 @@ public class PW_MGroup : MonoBehaviour
 
 			for(int i = 0; i < PW_References.Access.userInterfaces.chips.Count; i++)
 			{
-				PW_References.Access.userInterfaces.chips [i].sprite = prefab.billTexture[i];
+				if(i < prefab.billTexture.Count)
+				{
+					PW_References.Access.userInterfaces.chips [i].transform.parent.gameObject.SetActive (true);
+					PW_References.Access.userInterfaces.chips [i].sprite = prefab.billTexture[i];
+				}
+
+				else
+				{
+					PW_References.Access.userInterfaces.chips [i].transform.parent.gameObject.SetActive (false);
+				}
 			}
 		}
 
@@ -101,7 +110,7 @@ public class PW_MGroup : MonoBehaviour
 
 			if(machinePrefabs.Exists(x => x.machineInstance.onSelected))
 			{
-				if(PW_References.Access.userInterfaces.userDetails.currentCash >= OnActiveChipPrefab.amount)
+				if(PW_References.Access.userInterfaces.userDetails.currentChips >= OnActiveChipPrefab.amount)
 				{
 					OnSelectedMachine.colorPicker.ColorBlock (false);
 				}
@@ -132,7 +141,7 @@ public class PW_MGroup : MonoBehaviour
 				{
 					foreach(PW_Bet bet in bets.list)
 					{
-						PW_References.Access.userInterfaces.userDetails.currentCash += bet.chipAmount * bet.chipNumber;
+						PW_References.Access.userInterfaces.userDetails.currentChips += bet.chipAmount * bet.chipNumber;
 					}
 				}
 			}
