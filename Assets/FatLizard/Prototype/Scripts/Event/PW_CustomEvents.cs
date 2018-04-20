@@ -40,8 +40,12 @@ public class PW_CustomEvents
 	//Called when camera is about to idle on the first machine and wait for user interactions.
 	public static void OnPrepareGameplay()
 	{
-		PW_References.Access.userInterfaces.ShowGameplay (false);
-		PW_References.Access.userInterfaces.ToGameplay (false);
+		//PW_References.Access.userInterfaces.ShowGameplay (false);
+		//PW_References.Access.userInterfaces.ToGameplay (false);
+		PW_References.Access.userInterfaces.gameplaySwitcher.viewIndex = 1;
+		PW_References.Access.userInterfaces.gameplaySwitcher.SwitchView (0);
+		PW_References.Access.userInterfaces.chooseAnim.SetBool ("IsShowing", true);
+		PW_References.Access.userInterfaces.playAnim.SetBool ("IsShowing", false);
 
 		PW_References.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
 			gobjs.SetActive(false);
@@ -57,6 +61,8 @@ public class PW_CustomEvents
 		PW_References.Access.userInterfaces.gemGameDisplay.count = 
 			PW_References.Access.userInterfaces.userDetails.currentGems;
 
+		//PW_References.Access.userInterfaces.gameplaySwitcher.viewIndex = 1;
+		//PW_References.Access.userInterfaces.gameplaySwitcher.SwitchView (0);
 		PW_References.Access.userInterfaces.
 			DebugLog (PW_Interfaces.Debugs.Log, "OnGameEvent: User is currently on machine chooser display.");
 	}

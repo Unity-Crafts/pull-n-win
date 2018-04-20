@@ -171,13 +171,14 @@ GameObject:
   m_Component:
   - component: {fileID: 224503174861375420}
   - component: {fileID: 95642307240710366}
+  - component: {fileID: 225923063588356594}
   m_Layer: 5
   m_Name: PlayWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1049897141421814
 GameObject:
   m_ObjectHideFlags: 1
@@ -1192,6 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224113925014235552}
   - component: {fileID: 225068184085543452}
+  - component: {fileID: 114796505950417284}
   m_Layer: 5
   m_Name: GameDisplay
   m_TagString: Untagged
@@ -1736,7 +1738,7 @@ GameObject:
   - component: {fileID: 95845342383477328}
   - component: {fileID: 114592655187056858}
   m_Layer: 5
-  m_Name: PowerUp
+  m_Name: Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,7 +2415,7 @@ GameObject:
   - component: {fileID: 95112024394958402}
   - component: {fileID: 114858162237051706}
   m_Layer: 5
-  m_Name: PowerUp
+  m_Name: Gifts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4398,6 +4400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224827817988437236}
   - component: {fileID: 95572392000450590}
+  - component: {fileID: 225010921174814370}
   m_Layer: 5
   m_Name: MachinePicker
   m_TagString: Untagged
@@ -5110,7 +5113,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2c495335efb7f6140a2290c747690d10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5453,7 +5456,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300062, guid: 2c495335efb7f6140a2290c747690d10, type: 3}
+  m_Sprite: {fileID: 21300062, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6337,19 +6340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114158340834058740}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 114119672729445144}
-        m_MethodName: SetRaycastOn
+        m_MethodName: ShowConfirm
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6357,7 +6349,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -6732,14 +6724,24 @@ MonoBehaviour:
     maxBet: 0
     maxWin: 0
     maxLoss: 0
+  fickerValue:
+    normalFlicker: 0.49
+    winningFlicker: 0.12
+    lossingFlicker: 0.95
+  spinValue:
+    oneColor: 1
+    twoColor: 1
+    threeColor: 1
   menuDisplay: {fileID: 1250156436956210}
   gameDisplay: {fileID: 1278360368153008}
+  powerUps: {fileID: 114592655187056858}
   machineText: {fileID: 114614294834688946}
   prevButton: {fileID: 1864895313312928}
   nextButton: {fileID: 1068142358161076}
   menuAnim: {fileID: 95742487994869266}
   chooseAnim: {fileID: 95572392000450590}
   playAnim: {fileID: 95642307240710366}
+  gameplaySwitcher: {fileID: 114796505950417284}
   chipMenuDisplay: {fileID: 114072846990062562}
   gemMenuDisplay: {fileID: 114169575498660592}
   chipGameDisplay: {fileID: 114805162334810660}
@@ -6754,7 +6756,7 @@ MonoBehaviour:
   alertDialog: {fileID: 114874472173358020}
   rewardDisplay: {fileID: 1197374122439868}
   checkingDisplay: {fileID: 1889890540107302}
-  confirmExit: {fileID: 114158340834058740}
+  confirmDialog: {fileID: 114158340834058740}
   debugConsole: 1
 --- !u!114 &114122056705096434
 MonoBehaviour:
@@ -7196,7 +7198,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300054, guid: 2c495335efb7f6140a2290c747690d10, type: 3}
+  m_Sprite: {fileID: 21300054, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7271,7 +7273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibilitySpeed: 3
-  contentMessage: {fileID: 0}
+  contentMessage: {fileID: 114771147304522228}
 --- !u!114 &114158759082457156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9782,19 +9784,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114158340834058740}
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 114119672729445144}
-        m_MethodName: SetRaycastOn
+        m_MethodName: ShowConfirm
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9802,7 +9793,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -10746,6 +10737,7 @@ MonoBehaviour:
   dialog: {fileID: 114196974741082234}
   headerResult: {fileID: 114386833291496970}
   winningResult: {fileID: 114592353603355202}
+  resultLights: {fileID: 114946061553319776}
   cubeDisplay:
   - {fileID: 114537192530379052}
   - {fileID: 114426963013865400}
@@ -11493,8 +11485,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300044, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab,
+      type: 3}
+    m_PressedSprite: {fileID: 21300050, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -12218,7 +12211,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300058, guid: 2c495335efb7f6140a2290c747690d10, type: 3}
+  m_Sprite: {fileID: 21300044, guid: 9c5bb89f9e6cc2641bf240f8b5b17eab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13349,7 +13342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: Do you really want to switch to other account?
+  m_Text: 
 --- !u!114 &114771477615778730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13517,6 +13510,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114796505950417284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278360368153008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9710b53cb14efc489aa6ecff8020b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  views:
+  - {fileID: 225010921174814370}
+  - {fileID: 225923063588356594}
+  viewIndex: 1
+  speed: 3
 --- !u!114 &114804616878764234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14105,8 +14114,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114196974741082234}
-        m_MethodName: Hide
+      - m_Target: {fileID: 114499217075198860}
+        m_MethodName: HideDisplay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22427,7 +22436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000032577518, y: -12.000061}
+  m_AnchoredPosition: {x: -0.000032577518, y: -12}
   m_SizeDelta: {x: 0, y: 108.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224963470026870320
@@ -22570,6 +22579,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225010921174814370
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948056593340056}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!225 &225068184085543452
 CanvasGroup:
   m_ObjectHideFlags: 1
@@ -22653,6 +22673,17 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318612790857408}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!225 &225923063588356594
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040238474159778}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1

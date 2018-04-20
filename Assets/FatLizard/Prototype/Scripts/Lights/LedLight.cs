@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+public class FlickerValue
+{
+	[Range(0f, 2f)]
+	public float normalFlicker = 0.49f;
+
+	[Range(0f, 2f)]
+	public float winningFlicker = 0.12f;
+
+	[Range(0f, 2f)]
+	public float lossingFlicker = 0.95f;
+}
+
+[System.Serializable]
 public class LedOn
 {
 	public float duration = 0.25F;
@@ -46,10 +59,24 @@ public class LedLight : MonoBehaviour
 		}
 	}
 
+	private float waitForInit = 0f;
+	public void ResetFlicker(float newInitTimer, float onTimer, float offTimer)
+	{
+		waitForInit = newInitTimer;
+		ledOn.duration = onTimer;
+		ledOff.duration = offTimer;
+	}
+
 	void Update()
 	{
 		if (!activated)
 			return;
+
+		if(waitForInit > 0f)
+		{
+			waitForInit -= Time.deltaTime;
+			return;
+		}
 
 		if(ledOn.onColors.Length > 0)
 		{

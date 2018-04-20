@@ -14,6 +14,7 @@ public class PW_ResultInfo : MonoBehaviour
 	public DialogBehaviour dialog = null;
 	public Text headerResult = null;
 	public CounterBar winningResult = null;
+	public ImageGifier resultLights = null;
 	public List<Image> cubeDisplay = new List<Image>();
 	public Sprite neutral = null;
 	public List<Sprite> cubes = new List<Sprite>();
@@ -49,13 +50,12 @@ public class PW_ResultInfo : MonoBehaviour
 			{
 				cubeDisplay [curCubeIndex].sprite = cubes [i];
 			}
-
-			//Debug.LogWarning (i + " - " + playResult.result[i]);
 		}
 	}
 
 	public void HideDisplay()
 	{
+		resultLights.speed = 1f;
 		dialog.Hide ();
 	}
 }

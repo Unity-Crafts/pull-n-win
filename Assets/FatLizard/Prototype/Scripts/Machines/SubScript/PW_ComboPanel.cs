@@ -19,9 +19,6 @@ public class SpinnerValue
 
 public class PW_ComboPanel : MonoBehaviour
 {
-	[Header("SPINNERS")]
-	public SpinnerValue spinValue = new SpinnerValue();
-
 	[Header("REFERENCES")]
 	public Text oneColor = null;
 	public Text twoColor = null;
@@ -30,10 +27,28 @@ public class PW_ComboPanel : MonoBehaviour
 	//Put spinner mechanism here.
 	void OnValidate()
 	{
-		oneColor.text = "x" + spinValue.oneColor;
+		oneColor.text = "x" + PW_References.Access.userInterfaces.spinValue.oneColor;
 
-		twoColor.text = "x" + spinValue.twoColor;
+		twoColor.text = "x" + PW_References.Access.userInterfaces.spinValue.twoColor;
 
-		threeColor.text = "x" + spinValue.threeColor;
+		threeColor.text = "x" + PW_References.Access.userInterfaces.spinValue.threeColor;
+	}
+
+	void Update()
+	{
+		if (!oneColor.text.Equals("x" + PW_References.Access.userInterfaces.spinValue.oneColor))
+		{
+			oneColor.text = "x" + PW_References.Access.userInterfaces.spinValue.oneColor;
+		}
+
+		if (!oneColor.text.Equals("x" + PW_References.Access.userInterfaces.spinValue.twoColor))
+		{
+			twoColor.text = "x" + PW_References.Access.userInterfaces.spinValue.twoColor;
+		}
+
+		if (!oneColor.text.Equals("x" + PW_References.Access.userInterfaces.spinValue.threeColor))
+		{
+			threeColor.text = "x" + PW_References.Access.userInterfaces.spinValue.threeColor;
+		}
 	}
 }

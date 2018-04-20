@@ -25,28 +25,24 @@ public class PW_Prefabs : MonoBehaviour
 
 		else if(events.Equals("OnZoomAM"))
 		{
-			PW_References.Access.userInterfaces.ShowGameplay (true);
 			PW_References.Access.userInterfaces.ToGameplay (true);
 			PW_References.Access.machineGroups.machinePrefabs [0].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomBM"))
 		{
-			PW_References.Access.userInterfaces.ShowGameplay (true);
 			PW_References.Access.userInterfaces.ToGameplay (true);
 			PW_References.Access.machineGroups.machinePrefabs [1].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomCM"))
 		{
-			PW_References.Access.userInterfaces.ShowGameplay (true);
 			PW_References.Access.userInterfaces.ToGameplay (true);
 			PW_References.Access.machineGroups.machinePrefabs [2].machineInstance.ResetMachine ();
 		}
 
 		else if(events.Equals("OnZoomDM"))
 		{
-			PW_References.Access.userInterfaces.ShowGameplay (true);
 			PW_References.Access.userInterfaces.ToGameplay (true);
 			PW_References.Access.machineGroups.machinePrefabs [3].machineInstance.ResetMachine ();
 		}

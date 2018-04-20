@@ -23,7 +23,6 @@ public class PW_MInstance : MonoBehaviour
 	public PW_LeverMecha leverMecha = null;
 	public PW_PaddleSet paddleSet = null;
 	public PW_ColorPicker colorPicker = null;
-	public PW_ComboPanel comboPanel = null;
 
 	[Header("MACHINE ACTION")]
 	public InstaceAction instanceAction = InstaceAction.ChooseAction;
@@ -60,7 +59,6 @@ public class PW_MInstance : MonoBehaviour
 
 			paddleSet = GetComponentInChildren<PW_PaddleSet> (true);
 			colorPicker = GetComponentInChildren<PW_ColorPicker> (true);
-			comboPanel = GetComponentInChildren<PW_ComboPanel> (true);
 			colliders = GetComponentsInChildren<Collider> ();
 		}
 
@@ -109,9 +107,22 @@ public class PW_MInstance : MonoBehaviour
 
 	public void ChangeLightFlicker(float frequency)
 	{
-		foreach(LedLight ledLight in ledLights)
+		int curEven = 0;
+		int curOdd = 1;
+
+		for(int index = 0; index < ledLights.Length; index++)
 		{
-			ledLight.ledOn.duration = frequency;
+			if(index == curEven)
+			{
+				curEven += 2;
+				ledLights [index].ResetFlicker (0f, frequency, frequency);
+			}
+
+			if(index == curOdd)
+			{
+				curOdd += 2;
+				ledLights [index].ResetFlicker (frequency, frequency, frequency);
+			}
 		}
 	}
 
@@ -129,9 +140,10 @@ public class PW_MInstance : MonoBehaviour
 		cubeChecker.RandomCubeTransform ();
 		onReadyPlay = true;
 
-		Debug.Log("RESETTING...");
-		ChangeLightFlicker(0.49f);
-		Destroy (colorPicker.betHolder); //Destroy the BetHolder of bets.
+		PW_References.Access.userInterfaces.DebugLog(PW_Interfaces.Debugs.Log, "RESETTING... Focused machine!");
+		PW_References.Access.userInterfaces.powerUps.interactable = false;
+		ChangeLightFlicker(PW_References.Access.userInterfaces.fickerValue.normalFlicker);
+		if(colorPicker.betHolder != null) { Destroy (colorPicker.betHolder); }
 		//onResetting = true; 
 	}
 
@@ -142,7 +154,7 @@ public class PW_MInstance : MonoBehaviour
 	{
 		if (onReadyPlay) 
 		{
-			Debug.Log("CHECKING...");
+			PW_References.Access.userInterfaces.DebugLog(PW_Interfaces.Debugs.Log, "CHECKING... Focused machine!");
 			onReadyPlay = false;
 			PW_References.Access.PlaySound ("Release");
 			StartCoroutine ( CheckingMachine() );
@@ -171,30 +183,32 @@ public class PW_MInstance : MonoBehaviour
 		{
 			if(playResult.result[index] == 1)
 			{
-				playResult.result [index] = playResult.result [index] * comboPanel.spinValue.oneColor;
+				playResult.result [index] = playResult.result [index] * PW_References.Access.userInterfaces.spinValue.oneColor;
 			}
 
 			if(playResult.result[index] == 2)
 			{
-				playResult.result[index] = playResult.result[index] * comboPanel.spinValue.twoColor;
+				playResult.result[index] = playResult.result[index] * PW_References.Access.userInterfaces.spinValue.twoColor;
 			}
 
 			if(playResult.result[index] == 3)
 			{
-				playResult.result[index] = playResult.result[index] * comboPanel.spinValue.threeColor;
+				playResult.result[index] = playResult.result[index] * PW_References.Access.userInterfaces.spinValue.threeColor;
 			}
 		}
 
 		if(playResult.getTotalPlayWin > playResult.getTotalPlayBet)
 		{
 			//headerResult.text = "YOU WIN!";
-			ChangeLightFlicker(0.12f);
+			ChangeLightFlicker(PW_References.Access.userInterfaces.fickerValue.winningFlicker);
+			PW_References.Access.userInterfaces.resultInfo.resultLights.speed = 2.49f;
 		}
 
 		else
 		{
 			//headerResult.text = "YOU LOSE!";
-			ChangeLightFlicker(0.95f);
+			ChangeLightFlicker(PW_References.Access.userInterfaces.fickerValue.lossingFlicker);
+			PW_References.Access.userInterfaces.resultInfo.resultLights.speed = 0.75f;
 		}
 
 		ProcessPlayResult (playResult.getTotalPlayWin, playResult.getTotalPlayBet); 

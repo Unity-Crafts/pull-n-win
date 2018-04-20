@@ -1,45 +1,45 @@
 fileFormatVersion: 2
-guid: 2c495335efb7f6140a2290c747690d10
-timeCreated: 1514978170
+guid: 9c5bb89f9e6cc2641bf240f8b5b17eab
+timeCreated: 1524104720
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Icons_0
-    21300002: Icons_1
-    21300004: Icons_2
-    21300006: Icons_3
-    21300008: Icons_4
-    21300010: Icons_5
-    21300012: Icons_6
-    21300014: Icons_7
-    21300016: Icons_8
-    21300018: Icons_9
-    21300020: Icons_10
-    21300022: Icons_11
-    21300024: Icons_12
-    21300026: Icons_13
-    21300028: Icons_14
-    21300030: Icons_15
-    21300032: Icons_16
-    21300034: Icons_17
-    21300036: Icons_18
-    21300038: Icons_19
-    21300040: Icons_20
-    21300042: Icons_21
-    21300044: Icons_22
-    21300046: Icons_23
-    21300048: Icons_24
-    21300050: Icons_25
-    21300052: Icons_26
-    21300054: Icons_27
-    21300056: Icons_28
-    21300058: Icons_29
-    21300060: Icons_30
-    21300062: Icons_31
-    21300064: Icons_32
-    21300066: Icons_33
-    21300068: Icons_34
-    21300070: Icons_35
+    21300000: Icon-Store_0
+    21300002: Icon-Store_1
+    21300004: Icon-Store_2
+    21300006: Icon-Store_3
+    21300008: Icon-Store_4
+    21300010: Icon-Store_5
+    21300012: Icon-Store_6
+    21300014: Icon-Store_7
+    21300016: Icon-Store_8
+    21300018: Icon-Store_9
+    21300020: Icon-Store_10
+    21300022: Icon-Store_11
+    21300024: Icon-Store_12
+    21300026: Icon-Store_13
+    21300028: Icon-Store_14
+    21300030: Icon-Store_15
+    21300032: Icon-Store_16
+    21300034: Icon-Store_17
+    21300036: Icon-Store_18
+    21300038: Icon-Store_19
+    21300040: Icon-Store_20
+    21300042: Icon-Store_21
+    21300044: Icon-Store_22
+    21300046: Icon-Store_23
+    21300048: Icon-Store_24
+    21300050: Icon-Store_25
+    21300052: Icon-Store_26
+    21300054: Icon-Store_27
+    21300056: Icon-Store_28
+    21300058: Icon-Store_29
+    21300060: Icon-Store_30
+    21300062: Icon-Store_31
+    21300064: Icon-Store_32
+    21300066: Icon-Store_33
+    21300068: Icon-Store_34
+    21300070: Icon-Store_35
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -68,7 +68,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
     wrapU: 1
     wrapV: 1
@@ -81,8 +81,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -93,7 +94,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -101,8 +102,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,8 +112,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,8 +122,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: tvOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -128,8 +132,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -137,17 +142,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Tizen
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -155,8 +152,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -164,26 +162,18 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Samsung TV
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icons_0
+      name: Icon-Store_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 830
-        width: 142
-        height: 142
+        x: 26
+        y: 828
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,13 +181,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_1
+      name: Icon-Store_1
       rect:
         serializedVersion: 2
-        x: 188
-        y: 830
-        width: 142
-        height: 142
+        x: 187
+        y: 828
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_2
+      name: Icon-Store_2
       rect:
         serializedVersion: 2
-        x: 349
-        y: 830
-        width: 142
-        height: 142
+        x: 347
+        y: 828
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,13 +209,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_3
+      name: Icon-Store_3
       rect:
         serializedVersion: 2
-        x: 509
-        y: 830
-        width: 142
-        height: 142
+        x: 507
+        y: 828
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,13 +223,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_4
+      name: Icon-Store_4
       rect:
         serializedVersion: 2
-        x: 670
-        y: 830
-        width: 142
-        height: 142
+        x: 667
+        y: 828
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_5
+      name: Icon-Store_5
       rect:
         serializedVersion: 2
-        x: 830
-        y: 830
-        width: 142
-        height: 142
+        x: 829
+        y: 828
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,13 +251,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_6
+      name: Icon-Store_6
       rect:
         serializedVersion: 2
-        x: 28
-        y: 669
-        width: 142
-        height: 142
+        x: 26
+        y: 668
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,13 +265,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_7
+      name: Icon-Store_7
       rect:
         serializedVersion: 2
-        x: 188
-        y: 669
-        width: 142
-        height: 142
+        x: 187
+        y: 668
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,13 +279,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_8
+      name: Icon-Store_8
       rect:
         serializedVersion: 2
-        x: 349
-        y: 669
-        width: 142
-        height: 142
+        x: 347
+        y: 668
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,13 +293,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_9
+      name: Icon-Store_9
       rect:
         serializedVersion: 2
-        x: 509
-        y: 669
-        width: 142
-        height: 142
+        x: 507
+        y: 668
+        width: 146
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,13 +307,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_10
+      name: Icon-Store_10
       rect:
         serializedVersion: 2
-        x: 670
-        y: 669
-        width: 142
-        height: 142
+        x: 667
+        y: 668
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,13 +321,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_11
+      name: Icon-Store_11
       rect:
         serializedVersion: 2
-        x: 830
-        y: 669
-        width: 142
-        height: 142
+        x: 829
+        y: 668
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,13 +335,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_12
+      name: Icon-Store_12
       rect:
         serializedVersion: 2
-        x: 28
-        y: 509
-        width: 142
-        height: 141
+        x: 26
+        y: 507
+        width: 145
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,13 +349,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_13
+      name: Icon-Store_13
       rect:
         serializedVersion: 2
-        x: 188
-        y: 509
-        width: 142
-        height: 141
+        x: 187
+        y: 507
+        width: 146
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,13 +363,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_14
+      name: Icon-Store_14
       rect:
         serializedVersion: 2
-        x: 349
-        y: 509
-        width: 142
-        height: 141
+        x: 347
+        y: 507
+        width: 146
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,13 +377,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_15
+      name: Icon-Store_15
       rect:
         serializedVersion: 2
-        x: 509
-        y: 509
-        width: 142
-        height: 141
+        x: 507
+        y: 507
+        width: 146
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,13 +391,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_16
+      name: Icon-Store_16
       rect:
         serializedVersion: 2
-        x: 670
-        y: 509
-        width: 142
-        height: 141
+        x: 667
+        y: 507
+        width: 146
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,13 +405,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_17
+      name: Icon-Store_17
       rect:
         serializedVersion: 2
-        x: 830
-        y: 509
-        width: 142
-        height: 141
+        x: 829
+        y: 507
+        width: 145
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,13 +419,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_18
+      name: Icon-Store_18
       rect:
         serializedVersion: 2
-        x: 28
-        y: 348
-        width: 142
-        height: 142
+        x: 26
+        y: 345
+        width: 145
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,13 +433,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_19
+      name: Icon-Store_19
       rect:
         serializedVersion: 2
-        x: 188
-        y: 348
-        width: 142
-        height: 142
+        x: 187
+        y: 345
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,13 +447,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_20
+      name: Icon-Store_20
       rect:
         serializedVersion: 2
-        x: 349
-        y: 348
-        width: 142
-        height: 142
+        x: 347
+        y: 345
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,13 +461,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_21
+      name: Icon-Store_21
       rect:
         serializedVersion: 2
-        x: 509
-        y: 348
-        width: 142
-        height: 142
+        x: 507
+        y: 345
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,13 +475,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_22
+      name: Icon-Store_22
       rect:
         serializedVersion: 2
-        x: 670
-        y: 348
-        width: 142
-        height: 142
+        x: 667
+        y: 345
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,13 +489,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_23
+      name: Icon-Store_23
       rect:
         serializedVersion: 2
-        x: 830
-        y: 348
-        width: 142
-        height: 142
+        x: 829
+        y: 345
+        width: 145
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -513,13 +503,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_24
+      name: Icon-Store_24
       rect:
         serializedVersion: 2
-        x: 28
-        y: 187
-        width: 142
-        height: 142
+        x: 26
+        y: 185
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,13 +517,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_25
+      name: Icon-Store_25
       rect:
         serializedVersion: 2
-        x: 188
-        y: 187
-        width: 142
-        height: 142
+        x: 187
+        y: 185
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,13 +531,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_26
+      name: Icon-Store_26
       rect:
         serializedVersion: 2
-        x: 349
-        y: 187
-        width: 142
-        height: 142
+        x: 347
+        y: 185
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,13 +545,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_27
+      name: Icon-Store_27
       rect:
         serializedVersion: 2
-        x: 509
-        y: 187
-        width: 142
-        height: 142
+        x: 507
+        y: 185
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -569,13 +559,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_28
+      name: Icon-Store_28
       rect:
         serializedVersion: 2
-        x: 670
-        y: 187
-        width: 142
-        height: 142
+        x: 667
+        y: 185
+        width: 146
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,13 +573,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_29
+      name: Icon-Store_29
       rect:
         serializedVersion: 2
-        x: 830
-        y: 187
-        width: 142
-        height: 142
+        x: 829
+        y: 185
+        width: 145
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -597,13 +587,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_30
+      name: Icon-Store_30
       rect:
         serializedVersion: 2
-        x: 28
-        y: 27
-        width: 142
-        height: 142
+        x: 26
+        y: 24
+        width: 145
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,13 +601,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_31
+      name: Icon-Store_31
       rect:
         serializedVersion: 2
-        x: 188
-        y: 27
-        width: 142
-        height: 142
+        x: 185
+        y: 24
+        width: 148
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,13 +615,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_32
+      name: Icon-Store_32
       rect:
         serializedVersion: 2
-        x: 349
-        y: 27
-        width: 142
-        height: 142
+        x: 347
+        y: 24
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,13 +629,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_33
+      name: Icon-Store_33
       rect:
         serializedVersion: 2
-        x: 509
-        y: 27
-        width: 142
-        height: 142
+        x: 507
+        y: 24
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -653,13 +643,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_34
+      name: Icon-Store_34
       rect:
         serializedVersion: 2
-        x: 670
-        y: 27
-        width: 142
-        height: 142
+        x: 667
+        y: 24
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,13 +657,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_35
+      name: Icon-Store_35
       rect:
         serializedVersion: 2
-        x: 830
-        y: 27
-        width: 142
-        height: 142
+        x: 829
+        y: 24
+        width: 145
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

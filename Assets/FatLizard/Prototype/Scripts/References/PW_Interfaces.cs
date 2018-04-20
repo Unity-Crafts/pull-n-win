@@ -14,13 +14,18 @@ public class PW_Interfaces : MonoBehaviour
 {
 	[Header("PLAYER INFO")]
 	public PW_UserDetails userDetails = new PW_UserDetails();
-
-	[Header("PLAYER RECORDS")]
 	public PW_UserRecords userRecords = new PW_UserRecords();
+
+	[Header("LIGHT FLICKERINGS")]
+	public FlickerValue fickerValue = new FlickerValue();
+
+	[Header("COMBO PANEL")]
+	public SpinnerValue spinValue = new SpinnerValue();
 
 	[Header("MAIN DISPLAYS")]
 	public GameObject menuDisplay = null;
 	public GameObject gameDisplay = null;
+	public Button powerUps = null;
 
 	[Header("MACHINE SELECTION")]
 	public Text machineText = null;
@@ -33,6 +38,7 @@ public class PW_Interfaces : MonoBehaviour
 	public Animator playAnim = null;
 
 	[Header("MAIN GAMEPLAY")]
+	public ViewSwitcher gameplaySwitcher = null;
 	public CounterBar chipMenuDisplay = null;
 	public CounterBar gemMenuDisplay = null;
 	public CounterBar chipGameDisplay = null;
@@ -45,7 +51,7 @@ public class PW_Interfaces : MonoBehaviour
 	public DialogBehaviour alertDialog = null;
 	public GameObject rewardDisplay = null;
 	public GameObject checkingDisplay = null;
-	public DialogBehaviour confirmExit = null;
+	public DialogBehaviour confirmDialog = null;
 
 	[Header("DEBUG INFORMATION")]
 	public bool debugConsole = true;
@@ -85,8 +91,8 @@ public class PW_Interfaces : MonoBehaviour
 	{
 		menuAnim.SetTrigger ("Hide");
 		gameDisplay.SetActive (true);
-		PW_References.Access.objectReferences.gameAnim.SetTrigger ("MenuToGame");
 		viewSwitcher.SwitchView (1);
+		PW_References.Access.objectReferences.gameAnim.SetTrigger ("MenuToGame");
 
 		yield return new WaitForSeconds (1f);
 		menuDisplay.SetActive (false);
@@ -94,41 +100,18 @@ public class PW_Interfaces : MonoBehaviour
 
 	public void ConfirmExit()
 	{
+		confirmDialog.Hide ();
+		viewSwitcher.viewIndex = 0;
 		SetRaycastOn (false);
-		confirmExit.Hide ();
 
+		PW_References.Access.userInterfaces.gameplaySwitcher.viewIndex = 1;
 		PW_References.Access.machineGroups.OnFocusedMachine.mCollider.enabled = false;
 		PW_References.Access.objectReferences.gameAnim.SetTrigger ("GameToMenu");
 
 		PW_References.Access.objectReferences.designObjects.ForEach ((GameObject gobjs) => {
 			gobjs.SetActive(true);
 		});
-
-		gameDisplay.SetActive (false);
-		PW_References.Access.userInterfaces.gameDisplay.GetComponent<CanvasGroup> ().alpha = 0f;
-	}
-
-	public void ToGameplay(bool yes)
-	{
-		if(yes)
-		{
-			chooseAnim.gameObject.SetActive (false);
-			playAnim.gameObject.SetActive (true);
-			playAnim.SetBool ("IsShowing", yes);
-		}
-
-		else
-		{
-			playAnim.gameObject.SetActive (false);
-			chooseAnim.gameObject.SetActive (true);
-			chooseAnim.SetBool ("IsShowing", !yes);
-		}
-	}
-
-	public void ShowGameplay(bool yes)
-	{
-		playAnim.gameObject.SetActive (yes);
-		chooseAnim.gameObject.SetActive (!yes);
+		//gameDisplay.SetActive (false); //Remove as chooseDisplay animate on init.
 	}
 
 	public void ShowConfirm(bool showing)
@@ -136,16 +119,39 @@ public class PW_Interfaces : MonoBehaviour
 		if(showing)
 		{
 			SetRaycastOn (false);
-			confirmExit.Show ();
+			confirmDialog.Show ("Do you really want to switch to other account?");
 			chooseAnim.SetBool ("IsShowing", false);
 		}
 
 		else
 		{
-			confirmExit.Hide ();
+			confirmDialog.Hide ();
 			chooseAnim.SetBool ("IsShowing", true);
 			SetRaycastOn (true);
 		}
+	}
+
+	public void ToGameplay(bool yes)
+	{
+		if(yes)
+		{
+			//chooseAnim.gameObject.SetActive (false);
+			//playAnim.gameObject.SetActive (true);
+			PW_References.Access.userInterfaces.gameplaySwitcher.viewIndex = 0;
+			PW_References.Access.userInterfaces.gameplaySwitcher.SwitchView (1);
+
+		}
+
+		else
+		{
+			//playAnim.gameObject.SetActive (false);
+			//chooseAnim.gameObject.SetActive (true);
+			PW_References.Access.userInterfaces.gameplaySwitcher.viewIndex = 1;
+			PW_References.Access.userInterfaces.gameplaySwitcher.SwitchView (0);
+		}
+
+		//chooseAnim.SetBool ("IsShowing", !yes);
+		//playAnim.SetBool ("IsShowing", yes);
 	}
 
 	public void RefreshUserDetails(PW_UserDetails _userDetails)

@@ -101008,7 +101008,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x7
+  m_Text: x1
 --- !u!114 &114010955375888668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101236,7 +101236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x7
+  m_Text: x1
 --- !u!114 &114035200398910478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101864,7 +101864,6 @@ MonoBehaviour:
   leverMecha: {fileID: 114356415583866306}
   paddleSet: {fileID: 114115940628613142}
   colorPicker: {fileID: 114381626936636374}
-  comboPanel: {fileID: 114558993175613054}
   instanceAction: 0
   selector: {x: 1, y: 3, z: 1}
   playResult:
@@ -103104,7 +103103,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x7
+  m_Text: x1
 --- !u!114 &114249860859318904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103215,7 +103214,6 @@ MonoBehaviour:
   leverMecha: {fileID: 114805050018878492}
   paddleSet: {fileID: 114604649131765892}
   colorPicker: {fileID: 114126078354582824}
-  comboPanel: {fileID: 114908063253019070}
   instanceAction: 0
   selector: {x: 1, y: 3, z: 1}
   playResult:
@@ -103616,7 +103614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x3
+  m_Text: x1
 --- !u!114 &114309021507569342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104774,7 +104772,6 @@ MonoBehaviour:
   leverMecha: {fileID: 114892803055051498}
   paddleSet: {fileID: 114362730080773242}
   colorPicker: {fileID: 114556786571586068}
-  comboPanel: {fileID: 114999617740222846}
   instanceAction: 0
   selector: {x: 1, y: 3, z: 1}
   playResult:
@@ -105040,7 +105037,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x3
+  m_Text: x1
 --- !u!114 &114519275788829046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105320,10 +105317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed67d1f6990a5b44fa24ff6f00864c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinValue:
-    oneColor: 1
-    twoColor: 3
-    threeColor: 7
   oneColor: {fileID: 114237636960864504}
   twoColor: {fileID: 114518381439715336}
   threeColor: {fileID: 114003937308799150}
@@ -105368,7 +105361,6 @@ MonoBehaviour:
   leverMecha: {fileID: 114864294103498216}
   paddleSet: {fileID: 114282570892542512}
   colorPicker: {fileID: 114646086537111004}
-  comboPanel: {fileID: 114895085718331020}
   instanceAction: 0
   selector: {x: 1, y: 3, z: 1}
   playResult:
@@ -105598,7 +105590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x7
+  m_Text: x1
 --- !u!114 &114593543303160258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105922,7 +105914,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x3
+  m_Text: x1
 --- !u!114 &114632877253060130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106218,7 +106210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x3
+  m_Text: x1
 --- !u!114 &114677174025235812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108072,10 +108064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed67d1f6990a5b44fa24ff6f00864c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinValue:
-    oneColor: 1
-    twoColor: 3
-    threeColor: 7
   oneColor: {fileID: 114951811780204612}
   twoColor: {fileID: 114631635048912578}
   threeColor: {fileID: 114031340092600518}
@@ -108227,10 +108215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed67d1f6990a5b44fa24ff6f00864c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinValue:
-    oneColor: 1
-    twoColor: 3
-    threeColor: 7
   oneColor: {fileID: 114786726961493698}
   twoColor: {fileID: 114306823893793546}
   threeColor: {fileID: 114590326608983064}
@@ -108818,10 +108802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed67d1f6990a5b44fa24ff6f00864c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinValue:
-    oneColor: 1
-    twoColor: 3
-    threeColor: 7
   oneColor: {fileID: 114325269982773870}
   twoColor: {fileID: 114674139453891808}
   threeColor: {fileID: 114247600410247300}
