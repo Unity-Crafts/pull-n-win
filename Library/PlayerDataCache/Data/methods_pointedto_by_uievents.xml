@@ -1,0 +1,57 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="PW_MGroup">
+			<method name="SetCurrentBillBet"/>
+			<method name="ResetSelectedMachine"/>
+			<method name="SetCurrentBillBet"/>
+			<method name="SetCurrentBillBet"/>
+			<method name="SetCurrentBillBet"/>
+			<method name="ResetSelectedMachine"/>
+			<method name="ExitSelectedMachine"/>
+			<method name="ExitSelectedMachine"/>
+		</type>
+		<type fullname="HungryCannibal.UnderTheSeaUIKit.ViewSwitcher">
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+			<method name="SwitchView"/>
+		</type>
+		<type fullname="HungryCannibal.UnderTheSeaUIKit.Dialogs.DialogBehaviour">
+			<method name="Show"/>
+			<method name="Hide"/>
+			<method name="Show"/>
+			<method name="Hide"/>
+			<method name="Hide"/>
+			<method name="Hide"/>
+			<method name="Show"/>
+			<method name="Show"/>
+			<method name="Show"/>
+			<method name="Show"/>
+			<method name="Show"/>
+			<method name="Hide"/>
+			<method name="Hide"/>
+		</type>
+		<type fullname="PW_Interfaces">
+			<method name="StartGame"/>
+			<method name="ShowConfirm"/>
+			<method name="ConfirmExit"/>
+			<method name="ShowConfirm"/>
+		</type>
+		<type fullname="PW_ResultInfo">
+			<method name="HideDisplay"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine">
+		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+		</type>
+	</assembly>
+</linker>

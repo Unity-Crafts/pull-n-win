@@ -1,0 +1,134 @@
+<linker>
+<assembly fullname="Assembly-CSharp">
+<type fullname="Rotate" preserve="all"/>
+<type fullname="PW_AudioTrigger" preserve="all"/>
+<type fullname="PW_CamScript" preserve="all"/>
+<type fullname="CameraRotator" preserve="all"/>
+<type fullname="CustomURL" preserve="all"/>
+<type fullname="HaloFx" preserve="all"/>
+<type fullname="ImageGifier" preserve="all"/>
+<type fullname="PW_SRotation" preserve="all"/>
+<type fullname="RemoveCollider" preserve="all"/>
+<type fullname="TopViewCam" preserve="all"/>
+<type fullname="LedLight" preserve="all"/>
+<type fullname="PW_BillValue" preserve="all"/>
+<type fullname="PW_MGroup" preserve="all"/>
+<type fullname="PW_MInstance" preserve="all"/>
+<type fullname="PW_ColorPicker" preserve="all"/>
+<type fullname="PW_ComboPanel" preserve="all"/>
+<type fullname="PW_CubeChecker" preserve="all"/>
+<type fullname="PW_LeverMecha" preserve="all"/>
+<type fullname="PW_PaddleSet" preserve="all"/>
+<type fullname="PW_ResultInfo" preserve="all"/>
+<type fullname="PW_Interfaces" preserve="all"/>
+<type fullname="PW_Prefabs" preserve="all"/>
+<type fullname="FXQ_2D_Demo" preserve="all"/>
+<type fullname="FXQ_3D_Demo" preserve="all"/>
+<type fullname="FXQ_MoveParticle" preserve="all"/>
+<type fullname="FXQ_RotateShapeParticle" preserve="all"/>
+<type fullname="FXQ_SoundController" preserve="all"/>
+<type fullname="FXQ_Adamantine" preserve="all"/>
+<type fullname="FXQ_TargetAnimatorEvent" preserve="all"/>
+<type fullname="GA_FREE_Demo00" preserve="all"/>
+<type fullname="GA_FREE_Demo01" preserve="all"/>
+<type fullname="GA_FREE_Demo02" preserve="all"/>
+<type fullname="GA_FREE_Demo03" preserve="all"/>
+<type fullname="GA_FREE_Demo04" preserve="all"/>
+<type fullname="GA_FREE_Demo05" preserve="all"/>
+<type fullname="GA_FREE_Demo06" preserve="all"/>
+<type fullname="GA_FREE_Demo07" preserve="all"/>
+<type fullname="GA_FREE_Demo08" preserve="all"/>
+<type fullname="GA_FREE_DemoPlaySound" preserve="all"/>
+<type fullname="GA_FREE_OpenOtherScene" preserve="all"/>
+<type fullname="Demo" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.BubbleBehaviour" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.BubbleSpawner" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.CounterBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Dialogs.DialogBehaviour" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Dialogs.DialogManager" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Dialogs.MessageboxBehaviour" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.NewLifeCounter" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.OnOffSwitches.OnOffContainer" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.OnOffSwitches.OnOffSwitch" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.OnOffSwitches.OnOffSwitchSlider" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.AwardProgressBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.DragableProgressBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.DragableSlider" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.LongAwardProgressBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.ProgressAward" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.ProgressBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBars.SimpleProgressBar" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ProgressBarControl" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Tabs.Tab" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Tabs.TabContainer" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.Tabs.TabController" preserve="all"/>
+<type fullname="HungryCannibal.UnderTheSeaUIKit.ViewSwitcher" preserve="all"/>
+<type fullname="UnityEngine.PostProcessing.PostProcessingBehaviour" preserve="all"/>
+<type fullname="UnityEngine.PostProcessing.PostProcessingProfile" preserve="all"/>
+<type fullname="ExampleWheelController" preserve="all"/>
+</assembly>
+<assembly fullname="Assembly-UnityScript">
+<type fullname="GA_FREE_JS_Demo00" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo01" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo02" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo03" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo04" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo05" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo06" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo07" preserve="all"/>
+<type fullname="GA_FREE_JS_Demo08" preserve="all"/>
+<type fullname="GA_FREE_JS_DemoPlaySound" preserve="all"/>
+<type fullname="GA_FREE_JS_OpenOtherScene" preserve="all"/>
+</assembly>
+<assembly fullname="UnityEngine.UI">
+<type fullname="UnityEngine.EventSystems.EventSystem" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.UIBehaviour" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.BaseInput" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.BaseInputModule" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.PointerInputModule" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.TouchInputModule" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.BaseRaycaster" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.Physics2DRaycaster" preserve="all"/>
+<type fullname="UnityEngine.EventSystems.PhysicsRaycaster" preserve="all"/>
+<type fullname="UnityEngine.UI.Button" preserve="all"/>
+<type fullname="UnityEngine.UI.Dropdown" preserve="all"/>
+<type fullname="UnityEngine.UI.Dropdown/DropdownItem" preserve="all"/>
+<type fullname="UnityEngine.UI.Graphic" preserve="all"/>
+<type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all"/>
+<type fullname="UnityEngine.UI.Image" preserve="all"/>
+<type fullname="UnityEngine.UI.InputField" preserve="all"/>
+<type fullname="UnityEngine.UI.Mask" preserve="all"/>
+<type fullname="UnityEngine.UI.MaskableGraphic" preserve="all"/>
+<type fullname="UnityEngine.UI.RawImage" preserve="all"/>
+<type fullname="UnityEngine.UI.RectMask2D" preserve="all"/>
+<type fullname="UnityEngine.UI.Scrollbar" preserve="all"/>
+<type fullname="UnityEngine.UI.ScrollRect" preserve="all"/>
+<type fullname="UnityEngine.UI.Selectable" preserve="all"/>
+<type fullname="UnityEngine.UI.Slider" preserve="all"/>
+<type fullname="UnityEngine.UI.Text" preserve="all"/>
+<type fullname="UnityEngine.UI.Toggle" preserve="all"/>
+<type fullname="UnityEngine.UI.ToggleGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.AspectRatioFitter" preserve="all"/>
+<type fullname="UnityEngine.UI.CanvasScaler" preserve="all"/>
+<type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all"/>
+<type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.HorizontalOrVerticalLayoutGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.LayoutElement" preserve="all"/>
+<type fullname="UnityEngine.UI.LayoutGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all"/>
+<type fullname="UnityEngine.UI.BaseMeshEffect" preserve="all"/>
+<type fullname="UnityEngine.UI.Outline" preserve="all"/>
+<type fullname="UnityEngine.UI.PositionAsUV1" preserve="all"/>
+<type fullname="UnityEngine.UI.Shadow" preserve="all"/>
+</assembly>
+<assembly fullname="GUIAnimatorFREE">
+<type fullname="GUIAnimFREE" preserve="all"/>
+<type fullname="GUIAnimSystemFREE" preserve="all"/>
+</assembly>
+<assembly fullname="GETween">
+<type fullname="GETween" preserve="all"/>
+</assembly>
+</linker>
